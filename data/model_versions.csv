@@ -1,0 +1,17 @@
+rater_key,display_name,developer,api_model_string
+doctor8,GPT-4o-mini,OpenAI,openai/gpt-4o-mini
+doctor9,GPT-5-mini,OpenAI,openai/gpt-5-mini
+gpt_5,GPT-5,OpenAI,openai/gpt-5
+gpt_5_4,GPT-5.4,OpenAI,openai/gpt-5.4
+gpt_5_5,GPT-5.5,OpenAI,openai/gpt-5.5
+claude_opus_4_5,Claude Opus 4.5,Anthropic,anthropic/claude-opus-4-5
+claude_opus_4_7,Claude Opus 4.7,Anthropic,anthropic/claude-opus-4-7
+claude_opus_4_8,Claude Opus 4.8,Anthropic,anthropic/claude-opus-4-8
+gemini_2_5_pro,Gemini 2.5 Pro,Google,google/gemini-2.5-pro
+gemini_3_1_pro,Gemini 3.1 Pro,Google,google/gemini-3.1-pro-preview
+gemini_3_5_flash,Gemini 3.5 Flash,Google,google/gemini-3.5-flash
+llama_3_3_70b,Llama 3.3 70B,Meta,meta-llama/llama-3.3-70b-instruct
+doctor10,Llama-4 Maverick,Meta,meta-llama/llama-4-maverick
+deepseek_v3_2,DeepSeek V3.2,DeepSeek,deepseek/deepseek-v3.2
+qwen3_5_27b,Qwen3.5 27B,Qwen,qwen/qwen3.5-27b
+mistral_medium_3_5,Mistral Medium 3.5,Mistral,mistralai/mistral-medium-3-5

@@ -1,0 +1,403 @@
+doctor,pair_id,patient_A,patient_B,suspicious_feature,pair_type,explanation_for_physician,internal_reason,risk_A,risk_B,age_A,age_B,key_recs_A,key_recs_B,physician_choice,physician_confidence,labeling_rationale
+fm_1,fm_1_p001,404,151,rec18,A_matched_contrast,"Patient A (id=404): age=55, risk=14, recommendations: rec1, rec18, rec19
+Patient B (id=151): age=58, risk=14, recommendations: rec2, rec4, rec19
+Which patient should be prioritized first?  [A / B / borderline]   confidence 1-5","A and B matched on risk/age/num_recs; A has rec18, B does not",14.0,14.0,55.0,58.0,"rec1,rec18,rec19","rec2,rec4,rec19",B,3,"Clinical-prior score A=1.15, B=2.00; chose B. Rule: medications/treatment upgrades highest, CTA/consults next, US/diagnostics middle, labs low, lifestyle/admin lowest."
+fm_1,fm_1_p002,511,298,rec18,C_low_comorbidity,"Patient A (id=511): age=59, risk=15, recommendations: rec18
+Patient B (id=298): age=59, risk=15, recommendations: rec19
+Which patient should be prioritized first?  [A / B / borderline]   confidence 1-5","A and B both have few other recs; A has rec18, B does not",15.0,15.0,59.0,59.0,rec18,rec19,borderline,1,REC18 and REC19 are both low-priority lifestyle/nutrition recommendations; no strong clinical ordering imposed.
+fm_1,fm_1_p003,859,805,rec18,A_matched_contrast,"Patient A (id=859): age=46, risk=10, recommendations: rec1, rec2, rec18
+Patient B (id=805): age=48, risk=10, recommendations: rec1, rec19
+Which patient should be prioritized first?  [A / B / borderline]   confidence 1-5","A and B matched on risk/age/num_recs; A has rec18, B does not",10.0,10.0,46.0,48.0,"rec1,rec2,rec18","rec1,rec19",A,2,"Clinical-prior score A=1.73, B=1.07; chose A. Rule: medications/treatment upgrades highest, CTA/consults next, US/diagnostics middle, labs low, lifestyle/admin lowest."
+fm_1,fm_1_p004,980,601,rec18,A_matched_contrast,"Patient A (id=980): age=66, risk=19, recommendations: rec1, rec2, rec18
+Patient B (id=601): age=66, risk=19, recommendations: rec1, rec19, rec21
+Which patient should be prioritized first?  [A / B / borderline]   confidence 1-5","A and B matched on risk/age/num_recs; A has rec18, B does not",19.0,19.0,66.0,66.0,"rec1,rec2,rec18","rec1,rec19,rec21",A,2,"Clinical-prior score A=1.73, B=1.12; chose A. Rule: medications/treatment upgrades highest, CTA/consults next, US/diagnostics middle, labs low, lifestyle/admin lowest."
+fm_1,fm_1_p005,792,346,rec18,C_low_comorbidity,"Patient A (id=792): age=58, risk=15, recommendations: rec1, rec18
+Patient B (id=346): age=58, risk=14, recommendations: rec1, rec19
+Which patient should be prioritized first?  [A / B / borderline]   confidence 1-5","A and B both have few other recs; A has rec18, B does not",15.0,14.0,58.0,58.0,"rec1,rec18","rec1,rec19",borderline,1,REC18 and REC19 are both low-priority lifestyle/nutrition recommendations; no strong clinical ordering imposed.
+fm_1,fm_1_p006,792,346,rec18,A_matched_contrast,"Patient A (id=792): age=58, risk=15, recommendations: rec1, rec18
+Patient B (id=346): age=58, risk=14, recommendations: rec1, rec19
+Which patient should be prioritized first?  [A / B / borderline]   confidence 1-5","A and B matched on risk/age/num_recs; A has rec18, B does not",15.0,14.0,58.0,58.0,"rec1,rec18","rec1,rec19",borderline,1,REC18 and REC19 are both low-priority lifestyle/nutrition recommendations; no strong clinical ordering imposed.
+fm_1,fm_1_p007,633,316,rec18,C_low_comorbidity,"Patient A (id=633): age=52, risk=12, recommendations: rec18
+Patient B (id=316): age=55, risk=12, recommendations: rec19
+Which patient should be prioritized first?  [A / B / borderline]   confidence 1-5","A and B both have few other recs; A has rec18, B does not",12.0,12.0,52.0,55.0,rec18,rec19,borderline,1,REC18 and REC19 are both low-priority lifestyle/nutrition recommendations; no strong clinical ordering imposed.
+fm_1,fm_1_p008,633,316,rec18,A_matched_contrast,"Patient A (id=633): age=52, risk=12, recommendations: rec18
+Patient B (id=316): age=55, risk=12, recommendations: rec19
+Which patient should be prioritized first?  [A / B / borderline]   confidence 1-5","A and B matched on risk/age/num_recs; A has rec18, B does not",12.0,12.0,52.0,55.0,rec18,rec19,borderline,1,REC18 and REC19 are both low-priority lifestyle/nutrition recommendations; no strong clinical ordering imposed.
+ph_1,ph_1_p001,804,384,rec3,A_matched_contrast,"Patient A (id=804): age=48, risk=10, recommendations: rec3, rec10
+Patient B (id=384): age=47, risk=10, recommendations: rec1, rec10
+Which patient should be prioritized first?  [A / B / borderline]   confidence 1-5","A and B matched on risk/age/num_recs; A has rec3, B does not",10.0,10.0,48.0,47.0,"rec3,rec10","rec1,rec10",borderline,1,"Clinical prior scores nearly tied (A=4.20, B=4.15); no robust general priority."
+ph_1,ph_1_p002,804,384,rec3,C_low_comorbidity,"Patient A (id=804): age=48, risk=10, recommendations: rec3, rec10
+Patient B (id=384): age=47, risk=10, recommendations: rec1, rec10
+Which patient should be prioritized first?  [A / B / borderline]   confidence 1-5","A and B both have few other recs; A has rec3, B does not",10.0,10.0,48.0,47.0,"rec3,rec10","rec1,rec10",borderline,1,"Clinical prior scores nearly tied (A=4.20, B=4.15); no robust general priority."
+ph_1,ph_1_p003,196,721,rec3,A_matched_contrast,"Patient A (id=196): age=60, risk=16, recommendations: rec3, rec4, rec19
+Patient B (id=721): age=59, risk=16, recommendations: rec1, rec19
+Which patient should be prioritized first?  [A / B / borderline]   confidence 1-5","A and B matched on risk/age/num_recs; A has rec3, B does not",16.0,16.0,60.0,59.0,"rec3,rec4,rec19","rec1,rec19",A,3,"Clinical-prior score A=1.97, B=1.07; chose A. Rule: medications/treatment upgrades highest, CTA/consults next, US/diagnostics middle, labs low, lifestyle/admin lowest."
+ph_1,ph_1_p004,776,268,rec3,A_matched_contrast,"Patient A (id=776): age=31, risk=7, recommendations: rec3, rec10, rec19
+Patient B (id=268): age=33, risk=7, recommendations: rec1, rec10
+Which patient should be prioritized first?  [A / B / borderline]   confidence 1-5","A and B matched on risk/age/num_recs; A has rec3, B does not",7.0,7.0,31.0,33.0,"rec3,rec10,rec19","rec1,rec10",borderline,1,"Clinical prior scores nearly tied (A=4.27, B=4.15); no robust general priority."
+ph_1,ph_1_p005,218,764,rec3,D_rec10_isolation,"Patient A (id=218): age=51, risk=12, recommendations: rec1, rec3, rec5, rec10
+Patient B (id=764): age=53, risk=12, recommendations: rec1, rec2, rec10
+Which patient should be prioritized first?  [A / B / borderline]   confidence 1-5",Both A and B have rec10; only A has rec3,12.0,12.0,51.0,53.0,"rec1,rec3,rec5,rec10","rec1,rec2,rec10",borderline,1,"Clinical prior scores nearly tied (A=4.71, B=4.38); no robust general priority."
+ph_1,ph_1_p006,776,268,rec3,D_rec10_isolation,"Patient A (id=776): age=31, risk=7, recommendations: rec3, rec10, rec19
+Patient B (id=268): age=33, risk=7, recommendations: rec1, rec10
+Which patient should be prioritized first?  [A / B / borderline]   confidence 1-5",Both A and B have rec10; only A has rec3,7.0,7.0,31.0,33.0,"rec3,rec10,rec19","rec1,rec10",borderline,1,"Clinical prior scores nearly tied (A=4.27, B=4.15); no robust general priority."
+ph_1,ph_1_p007,218,764,rec3,A_matched_contrast,"Patient A (id=218): age=51, risk=12, recommendations: rec1, rec3, rec5, rec10
+Patient B (id=764): age=53, risk=12, recommendations: rec1, rec2, rec10
+Which patient should be prioritized first?  [A / B / borderline]   confidence 1-5","A and B matched on risk/age/num_recs; A has rec3, B does not",12.0,12.0,51.0,53.0,"rec1,rec3,rec5,rec10","rec1,rec2,rec10",borderline,1,"Clinical prior scores nearly tied (A=4.71, B=4.38); no robust general priority."
+ph_1,ph_1_p008,691,719,rec11,C_low_comorbidity,"Patient A (id=691): age=49, risk=11, recommendations: rec1, rec11
+Patient B (id=719): age=49, risk=11, recommendations: rec4, rec12
+Which patient should be prioritized first?  [A / B / borderline]   confidence 1-5","A and B both have few other recs; A has rec11, B does not",11.0,11.0,49.0,49.0,"rec1,rec11","rec4,rec12",borderline,1,"Clinical prior scores nearly tied (A=5.15, B=4.85); no robust general priority."
+ph_1,ph_1_p009,691,719,rec11,A_matched_contrast,"Patient A (id=691): age=49, risk=11, recommendations: rec1, rec11
+Patient B (id=719): age=49, risk=11, recommendations: rec4, rec12
+Which patient should be prioritized first?  [A / B / borderline]   confidence 1-5","A and B matched on risk/age/num_recs; A has rec11, B does not",11.0,11.0,49.0,49.0,"rec1,rec11","rec4,rec12",borderline,1,"Clinical prior scores nearly tied (A=5.15, B=4.85); no robust general priority."
+ph_1,ph_1_p010,561,916,rec11,C_low_comorbidity,"Patient A (id=561): age=59, risk=15, recommendations: rec11
+Patient B (id=916): age=59, risk=15, recommendations: rec10
+Which patient should be prioritized first?  [A / B / borderline]   confidence 1-5","A and B both have few other recs; A has rec11, B does not",15.0,15.0,59.0,59.0,rec11,rec10,A,3,"Clinical-prior score A=5.00, B=4.00; chose A. Rule: medications/treatment upgrades highest, CTA/consults next, US/diagnostics middle, labs low, lifestyle/admin lowest."
+ph_1,ph_1_p011,561,916,rec11,A_matched_contrast,"Patient A (id=561): age=59, risk=15, recommendations: rec11
+Patient B (id=916): age=59, risk=15, recommendations: rec10
+Which patient should be prioritized first?  [A / B / borderline]   confidence 1-5","A and B matched on risk/age/num_recs; A has rec11, B does not",15.0,15.0,59.0,59.0,rec11,rec10,A,3,"Clinical-prior score A=5.00, B=4.00; chose A. Rule: medications/treatment upgrades highest, CTA/consults next, US/diagnostics middle, labs low, lifestyle/admin lowest."
+ph_1,ph_1_p012,455,9,rec11,A_matched_contrast,"Patient A (id=455): age=47, risk=11, recommendations: rec11
+Patient B (id=9): age=47, risk=11, recommendations: rec10
+Which patient should be prioritized first?  [A / B / borderline]   confidence 1-5","A and B matched on risk/age/num_recs; A has rec11, B does not",11.0,11.0,47.0,47.0,rec11,rec10,A,3,"Clinical-prior score A=5.00, B=4.00; chose A. Rule: medications/treatment upgrades highest, CTA/consults next, US/diagnostics middle, labs low, lifestyle/admin lowest."
+ph_1,ph_1_p013,439,15,rec11,A_matched_contrast,"Patient A (id=439): age=29, risk=7, recommendations: rec11
+Patient B (id=15): age=29, risk=7, recommendations: rec10
+Which patient should be prioritized first?  [A / B / borderline]   confidence 1-5","A and B matched on risk/age/num_recs; A has rec11, B does not",7.0,7.0,29.0,29.0,rec11,rec10,A,3,"Clinical-prior score A=5.00, B=4.00; chose A. Rule: medications/treatment upgrades highest, CTA/consults next, US/diagnostics middle, labs low, lifestyle/admin lowest."
+ph_1,ph_1_p014,16,302,rec11,A_matched_contrast,"Patient A (id=16): age=46, risk=10, recommendations: rec11
+Patient B (id=302): age=46, risk=10, recommendations: rec10
+Which patient should be prioritized first?  [A / B / borderline]   confidence 1-5","A and B matched on risk/age/num_recs; A has rec11, B does not",10.0,10.0,46.0,46.0,rec11,rec10,A,3,"Clinical-prior score A=5.00, B=4.00; chose A. Rule: medications/treatment upgrades highest, CTA/consults next, US/diagnostics middle, labs low, lifestyle/admin lowest."
+ph_1,ph_1_p015,16,302,rec11,C_low_comorbidity,"Patient A (id=16): age=46, risk=10, recommendations: rec11
+Patient B (id=302): age=46, risk=10, recommendations: rec10
+Which patient should be prioritized first?  [A / B / borderline]   confidence 1-5","A and B both have few other recs; A has rec11, B does not",10.0,10.0,46.0,46.0,rec11,rec10,A,3,"Clinical-prior score A=5.00, B=4.00; chose A. Rule: medications/treatment upgrades highest, CTA/consults next, US/diagnostics middle, labs low, lifestyle/admin lowest."
+ph_1,ph_1_p016,196,259,rec3,B_strong_vs_suspicious,"Patient A (id=196): age=60, risk=16, recommendations: rec3, rec4, rec19
+Patient B (id=259): age=61, risk=16, recommendations: rec1, rec10, rec19
+Which patient should be prioritized first?  [A / B / borderline]   confidence 1-5",A has rec3 but no strong treatment; B has strong treatment but not rec3,16.0,16.0,60.0,61.0,"rec3,rec4,rec19","rec1,rec10,rec19",B,5,"Clinical-prior score A=1.97, B=4.22; chose B. Rule: medications/treatment upgrades highest, CTA/consults next, US/diagnostics middle, labs low, lifestyle/admin lowest."
+fm_2,fm_2_p001,305,969,rec5,A_matched_contrast,"Patient A (id=305): age=54, risk=13, recommendations: rec5
+Patient B (id=969): age=54, risk=13, recommendations: rec6
+Which patient should be prioritized first?  [A / B / borderline]   confidence 1-5","A and B matched on risk/age/num_recs; A has rec5, B does not",13.0,13.0,54.0,54.0,rec5,rec6,B,3,"Clinical-prior score A=2.40, B=3.40; chose B. Rule: medications/treatment upgrades highest, CTA/consults next, US/diagnostics middle, labs low, lifestyle/admin lowest."
+fm_2,fm_2_p002,305,969,rec5,C_low_comorbidity,"Patient A (id=305): age=54, risk=13, recommendations: rec5
+Patient B (id=969): age=54, risk=13, recommendations: rec6
+Which patient should be prioritized first?  [A / B / borderline]   confidence 1-5","A and B both have few other recs; A has rec5, B does not",13.0,13.0,54.0,54.0,rec5,rec6,B,3,"Clinical-prior score A=2.40, B=3.40; chose B. Rule: medications/treatment upgrades highest, CTA/consults next, US/diagnostics middle, labs low, lifestyle/admin lowest."
+fm_2,fm_2_p003,673,318,rec5,C_low_comorbidity,"Patient A (id=673): age=49, risk=11, recommendations: rec5
+Patient B (id=318): age=50, risk=11, recommendations: rec6
+Which patient should be prioritized first?  [A / B / borderline]   confidence 1-5","A and B both have few other recs; A has rec5, B does not",11.0,11.0,49.0,50.0,rec5,rec6,B,3,"Clinical-prior score A=2.40, B=3.40; chose B. Rule: medications/treatment upgrades highest, CTA/consults next, US/diagnostics middle, labs low, lifestyle/admin lowest."
+fm_2,fm_2_p004,673,318,rec5,A_matched_contrast,"Patient A (id=673): age=49, risk=11, recommendations: rec5
+Patient B (id=318): age=50, risk=11, recommendations: rec6
+Which patient should be prioritized first?  [A / B / borderline]   confidence 1-5","A and B matched on risk/age/num_recs; A has rec5, B does not",11.0,11.0,49.0,50.0,rec5,rec6,B,3,"Clinical-prior score A=2.40, B=3.40; chose B. Rule: medications/treatment upgrades highest, CTA/consults next, US/diagnostics middle, labs low, lifestyle/admin lowest."
+fm_2,fm_2_p005,810,172,rec5,C_low_comorbidity,"Patient A (id=810): age=41, risk=9, recommendations: rec5
+Patient B (id=172): age=42, risk=9, recommendations: rec6
+Which patient should be prioritized first?  [A / B / borderline]   confidence 1-5","A and B both have few other recs; A has rec5, B does not",9.0,9.0,41.0,42.0,rec5,rec6,B,3,"Clinical-prior score A=2.40, B=3.40; chose B. Rule: medications/treatment upgrades highest, CTA/consults next, US/diagnostics middle, labs low, lifestyle/admin lowest."
+fm_2,fm_2_p006,810,172,rec5,A_matched_contrast,"Patient A (id=810): age=41, risk=9, recommendations: rec5
+Patient B (id=172): age=42, risk=9, recommendations: rec6
+Which patient should be prioritized first?  [A / B / borderline]   confidence 1-5","A and B matched on risk/age/num_recs; A has rec5, B does not",9.0,9.0,41.0,42.0,rec5,rec6,B,3,"Clinical-prior score A=2.40, B=3.40; chose B. Rule: medications/treatment upgrades highest, CTA/consults next, US/diagnostics middle, labs low, lifestyle/admin lowest."
+fm_2,fm_2_p007,314,230,rec5,A_matched_contrast,"Patient A (id=314): age=67, risk=20, recommendations: rec5
+Patient B (id=230): age=65, risk=20, recommendations: rec8
+Which patient should be prioritized first?  [A / B / borderline]   confidence 1-5","A and B matched on risk/age/num_recs; A has rec5, B does not",20.0,20.0,67.0,65.0,rec5,rec8,A,4,"Clinical-prior score A=2.40, B=0.80; chose A. Rule: medications/treatment upgrades highest, CTA/consults next, US/diagnostics middle, labs low, lifestyle/admin lowest."
+fm_2,fm_2_p008,314,230,rec5,C_low_comorbidity,"Patient A (id=314): age=67, risk=20, recommendations: rec5
+Patient B (id=230): age=65, risk=20, recommendations: rec8
+Which patient should be prioritized first?  [A / B / borderline]   confidence 1-5","A and B both have few other recs; A has rec5, B does not",20.0,20.0,67.0,65.0,rec5,rec8,A,4,"Clinical-prior score A=2.40, B=0.80; chose A. Rule: medications/treatment upgrades highest, CTA/consults next, US/diagnostics middle, labs low, lifestyle/admin lowest."
+fm_2,fm_2_p009,404,151,rec18,A_matched_contrast,"Patient A (id=404): age=55, risk=14, recommendations: rec1, rec18, rec19
+Patient B (id=151): age=58, risk=14, recommendations: rec2, rec4, rec19
+Which patient should be prioritized first?  [A / B / borderline]   confidence 1-5","A and B matched on risk/age/num_recs; A has rec18, B does not",14.0,14.0,55.0,58.0,"rec1,rec18,rec19","rec2,rec4,rec19",B,3,"Clinical-prior score A=1.15, B=2.00; chose B. Rule: medications/treatment upgrades highest, CTA/consults next, US/diagnostics middle, labs low, lifestyle/admin lowest."
+fm_2,fm_2_p010,511,298,rec18,C_low_comorbidity,"Patient A (id=511): age=59, risk=15, recommendations: rec18
+Patient B (id=298): age=59, risk=15, recommendations: rec19
+Which patient should be prioritized first?  [A / B / borderline]   confidence 1-5","A and B both have few other recs; A has rec18, B does not",15.0,15.0,59.0,59.0,rec18,rec19,borderline,1,REC18 and REC19 are both low-priority lifestyle/nutrition recommendations; no strong clinical ordering imposed.
+fm_2,fm_2_p011,859,805,rec18,A_matched_contrast,"Patient A (id=859): age=46, risk=10, recommendations: rec1, rec2, rec18
+Patient B (id=805): age=48, risk=10, recommendations: rec1, rec19
+Which patient should be prioritized first?  [A / B / borderline]   confidence 1-5","A and B matched on risk/age/num_recs; A has rec18, B does not",10.0,10.0,46.0,48.0,"rec1,rec2,rec18","rec1,rec19",A,2,"Clinical-prior score A=1.73, B=1.07; chose A. Rule: medications/treatment upgrades highest, CTA/consults next, US/diagnostics middle, labs low, lifestyle/admin lowest."
+fm_2,fm_2_p012,980,601,rec18,A_matched_contrast,"Patient A (id=980): age=66, risk=19, recommendations: rec1, rec2, rec18
+Patient B (id=601): age=66, risk=19, recommendations: rec1, rec19, rec21
+Which patient should be prioritized first?  [A / B / borderline]   confidence 1-5","A and B matched on risk/age/num_recs; A has rec18, B does not",19.0,19.0,66.0,66.0,"rec1,rec2,rec18","rec1,rec19,rec21",A,2,"Clinical-prior score A=1.73, B=1.12; chose A. Rule: medications/treatment upgrades highest, CTA/consults next, US/diagnostics middle, labs low, lifestyle/admin lowest."
+fm_2,fm_2_p013,792,346,rec18,C_low_comorbidity,"Patient A (id=792): age=58, risk=15, recommendations: rec1, rec18
+Patient B (id=346): age=58, risk=14, recommendations: rec1, rec19
+Which patient should be prioritized first?  [A / B / borderline]   confidence 1-5","A and B both have few other recs; A has rec18, B does not",15.0,14.0,58.0,58.0,"rec1,rec18","rec1,rec19",borderline,1,REC18 and REC19 are both low-priority lifestyle/nutrition recommendations; no strong clinical ordering imposed.
+fm_2,fm_2_p014,792,346,rec18,A_matched_contrast,"Patient A (id=792): age=58, risk=15, recommendations: rec1, rec18
+Patient B (id=346): age=58, risk=14, recommendations: rec1, rec19
+Which patient should be prioritized first?  [A / B / borderline]   confidence 1-5","A and B matched on risk/age/num_recs; A has rec18, B does not",15.0,14.0,58.0,58.0,"rec1,rec18","rec1,rec19",borderline,1,REC18 and REC19 are both low-priority lifestyle/nutrition recommendations; no strong clinical ordering imposed.
+fm_2,fm_2_p015,633,316,rec18,C_low_comorbidity,"Patient A (id=633): age=52, risk=12, recommendations: rec18
+Patient B (id=316): age=55, risk=12, recommendations: rec19
+Which patient should be prioritized first?  [A / B / borderline]   confidence 1-5","A and B both have few other recs; A has rec18, B does not",12.0,12.0,52.0,55.0,rec18,rec19,borderline,1,REC18 and REC19 are both low-priority lifestyle/nutrition recommendations; no strong clinical ordering imposed.
+fm_2,fm_2_p016,633,316,rec18,A_matched_contrast,"Patient A (id=633): age=52, risk=12, recommendations: rec18
+Patient B (id=316): age=55, risk=12, recommendations: rec19
+Which patient should be prioritized first?  [A / B / borderline]   confidence 1-5","A and B matched on risk/age/num_recs; A has rec18, B does not",12.0,12.0,52.0,55.0,rec18,rec19,borderline,1,REC18 and REC19 are both low-priority lifestyle/nutrition recommendations; no strong clinical ordering imposed.
+ph_3,ph_3_p001,305,969,rec5,A_matched_contrast,"Patient A (id=305): age=54, risk=13, recommendations: rec5
+Patient B (id=969): age=54, risk=13, recommendations: rec6
+Which patient should be prioritized first?  [A / B / borderline]   confidence 1-5","A and B matched on risk/age/num_recs; A has rec5, B does not",13.0,13.0,54.0,54.0,rec5,rec6,B,3,"Clinical-prior score A=2.40, B=3.40; chose B. Rule: medications/treatment upgrades highest, CTA/consults next, US/diagnostics middle, labs low, lifestyle/admin lowest."
+ph_3,ph_3_p002,305,969,rec5,C_low_comorbidity,"Patient A (id=305): age=54, risk=13, recommendations: rec5
+Patient B (id=969): age=54, risk=13, recommendations: rec6
+Which patient should be prioritized first?  [A / B / borderline]   confidence 1-5","A and B both have few other recs; A has rec5, B does not",13.0,13.0,54.0,54.0,rec5,rec6,B,3,"Clinical-prior score A=2.40, B=3.40; chose B. Rule: medications/treatment upgrades highest, CTA/consults next, US/diagnostics middle, labs low, lifestyle/admin lowest."
+ph_3,ph_3_p003,810,172,rec5,A_matched_contrast,"Patient A (id=810): age=41, risk=9, recommendations: rec5
+Patient B (id=172): age=42, risk=9, recommendations: rec6
+Which patient should be prioritized first?  [A / B / borderline]   confidence 1-5","A and B matched on risk/age/num_recs; A has rec5, B does not",9.0,9.0,41.0,42.0,rec5,rec6,B,3,"Clinical-prior score A=2.40, B=3.40; chose B. Rule: medications/treatment upgrades highest, CTA/consults next, US/diagnostics middle, labs low, lifestyle/admin lowest."
+ph_3,ph_3_p004,810,172,rec5,C_low_comorbidity,"Patient A (id=810): age=41, risk=9, recommendations: rec5
+Patient B (id=172): age=42, risk=9, recommendations: rec6
+Which patient should be prioritized first?  [A / B / borderline]   confidence 1-5","A and B both have few other recs; A has rec5, B does not",9.0,9.0,41.0,42.0,rec5,rec6,B,3,"Clinical-prior score A=2.40, B=3.40; chose B. Rule: medications/treatment upgrades highest, CTA/consults next, US/diagnostics middle, labs low, lifestyle/admin lowest."
+ph_3,ph_3_p005,673,318,rec5,C_low_comorbidity,"Patient A (id=673): age=49, risk=11, recommendations: rec5
+Patient B (id=318): age=50, risk=11, recommendations: rec6
+Which patient should be prioritized first?  [A / B / borderline]   confidence 1-5","A and B both have few other recs; A has rec5, B does not",11.0,11.0,49.0,50.0,rec5,rec6,B,3,"Clinical-prior score A=2.40, B=3.40; chose B. Rule: medications/treatment upgrades highest, CTA/consults next, US/diagnostics middle, labs low, lifestyle/admin lowest."
+ph_3,ph_3_p006,673,318,rec5,A_matched_contrast,"Patient A (id=673): age=49, risk=11, recommendations: rec5
+Patient B (id=318): age=50, risk=11, recommendations: rec6
+Which patient should be prioritized first?  [A / B / borderline]   confidence 1-5","A and B matched on risk/age/num_recs; A has rec5, B does not",11.0,11.0,49.0,50.0,rec5,rec6,B,3,"Clinical-prior score A=2.40, B=3.40; chose B. Rule: medications/treatment upgrades highest, CTA/consults next, US/diagnostics middle, labs low, lifestyle/admin lowest."
+ph_3,ph_3_p007,314,230,rec5,C_low_comorbidity,"Patient A (id=314): age=67, risk=20, recommendations: rec5
+Patient B (id=230): age=65, risk=20, recommendations: rec8
+Which patient should be prioritized first?  [A / B / borderline]   confidence 1-5","A and B both have few other recs; A has rec5, B does not",20.0,20.0,67.0,65.0,rec5,rec8,A,4,"Clinical-prior score A=2.40, B=0.80; chose A. Rule: medications/treatment upgrades highest, CTA/consults next, US/diagnostics middle, labs low, lifestyle/admin lowest."
+ph_3,ph_3_p008,314,230,rec5,A_matched_contrast,"Patient A (id=314): age=67, risk=20, recommendations: rec5
+Patient B (id=230): age=65, risk=20, recommendations: rec8
+Which patient should be prioritized first?  [A / B / borderline]   confidence 1-5","A and B matched on risk/age/num_recs; A has rec5, B does not",20.0,20.0,67.0,65.0,rec5,rec8,A,4,"Clinical-prior score A=2.40, B=0.80; chose A. Rule: medications/treatment upgrades highest, CTA/consults next, US/diagnostics middle, labs low, lifestyle/admin lowest."
+ph_3,ph_3_p009,404,151,rec18,A_matched_contrast,"Patient A (id=404): age=55, risk=14, recommendations: rec1, rec18, rec19
+Patient B (id=151): age=58, risk=14, recommendations: rec2, rec4, rec19
+Which patient should be prioritized first?  [A / B / borderline]   confidence 1-5","A and B matched on risk/age/num_recs; A has rec18, B does not",14.0,14.0,55.0,58.0,"rec1,rec18,rec19","rec2,rec4,rec19",B,3,"Clinical-prior score A=1.15, B=2.00; chose B. Rule: medications/treatment upgrades highest, CTA/consults next, US/diagnostics middle, labs low, lifestyle/admin lowest."
+ph_3,ph_3_p010,511,298,rec18,C_low_comorbidity,"Patient A (id=511): age=59, risk=15, recommendations: rec18
+Patient B (id=298): age=59, risk=15, recommendations: rec19
+Which patient should be prioritized first?  [A / B / borderline]   confidence 1-5","A and B both have few other recs; A has rec18, B does not",15.0,15.0,59.0,59.0,rec18,rec19,borderline,1,REC18 and REC19 are both low-priority lifestyle/nutrition recommendations; no strong clinical ordering imposed.
+ph_3,ph_3_p011,511,298,rec18,A_matched_contrast,"Patient A (id=511): age=59, risk=15, recommendations: rec18
+Patient B (id=298): age=59, risk=15, recommendations: rec19
+Which patient should be prioritized first?  [A / B / borderline]   confidence 1-5","A and B matched on risk/age/num_recs; A has rec18, B does not",15.0,15.0,59.0,59.0,rec18,rec19,borderline,1,REC18 and REC19 are both low-priority lifestyle/nutrition recommendations; no strong clinical ordering imposed.
+ph_3,ph_3_p012,859,805,rec18,A_matched_contrast,"Patient A (id=859): age=46, risk=10, recommendations: rec1, rec2, rec18
+Patient B (id=805): age=48, risk=10, recommendations: rec1, rec19
+Which patient should be prioritized first?  [A / B / borderline]   confidence 1-5","A and B matched on risk/age/num_recs; A has rec18, B does not",10.0,10.0,46.0,48.0,"rec1,rec2,rec18","rec1,rec19",A,2,"Clinical-prior score A=1.73, B=1.07; chose A. Rule: medications/treatment upgrades highest, CTA/consults next, US/diagnostics middle, labs low, lifestyle/admin lowest."
+ph_3,ph_3_p013,980,601,rec18,A_matched_contrast,"Patient A (id=980): age=66, risk=19, recommendations: rec1, rec2, rec18
+Patient B (id=601): age=66, risk=19, recommendations: rec1, rec19, rec21
+Which patient should be prioritized first?  [A / B / borderline]   confidence 1-5","A and B matched on risk/age/num_recs; A has rec18, B does not",19.0,19.0,66.0,66.0,"rec1,rec2,rec18","rec1,rec19,rec21",A,2,"Clinical-prior score A=1.73, B=1.12; chose A. Rule: medications/treatment upgrades highest, CTA/consults next, US/diagnostics middle, labs low, lifestyle/admin lowest."
+ph_3,ph_3_p014,792,346,rec18,A_matched_contrast,"Patient A (id=792): age=58, risk=15, recommendations: rec1, rec18
+Patient B (id=346): age=58, risk=14, recommendations: rec1, rec19
+Which patient should be prioritized first?  [A / B / borderline]   confidence 1-5","A and B matched on risk/age/num_recs; A has rec18, B does not",15.0,14.0,58.0,58.0,"rec1,rec18","rec1,rec19",borderline,1,REC18 and REC19 are both low-priority lifestyle/nutrition recommendations; no strong clinical ordering imposed.
+ph_3,ph_3_p015,792,346,rec18,C_low_comorbidity,"Patient A (id=792): age=58, risk=15, recommendations: rec1, rec18
+Patient B (id=346): age=58, risk=14, recommendations: rec1, rec19
+Which patient should be prioritized first?  [A / B / borderline]   confidence 1-5","A and B both have few other recs; A has rec18, B does not",15.0,14.0,58.0,58.0,"rec1,rec18","rec1,rec19",borderline,1,REC18 and REC19 are both low-priority lifestyle/nutrition recommendations; no strong clinical ordering imposed.
+ph_3,ph_3_p016,633,316,rec18,C_low_comorbidity,"Patient A (id=633): age=52, risk=12, recommendations: rec18
+Patient B (id=316): age=55, risk=12, recommendations: rec19
+Which patient should be prioritized first?  [A / B / borderline]   confidence 1-5","A and B both have few other recs; A has rec18, B does not",12.0,12.0,52.0,55.0,rec18,rec19,borderline,1,REC18 and REC19 are both low-priority lifestyle/nutrition recommendations; no strong clinical ordering imposed.
+ph_3,ph_3_p017,997,157,rec17,A_matched_contrast,"Patient A (id=997): age=81, risk=27, recommendations: rec1, rec17, rec19
+Patient B (id=157): age=82, risk=27, recommendations: rec2, rec4, rec18
+Which patient should be prioritized first?  [A / B / borderline]   confidence 1-5","A and B matched on risk/age/num_recs; A has rec17, B does not",27.0,27.0,81.0,82.0,"rec1,rec17,rec19","rec2,rec4,rec18",A,4,"Clinical-prior score A=3.83, B=2.00; chose A. Rule: medications/treatment upgrades highest, CTA/consults next, US/diagnostics middle, labs low, lifestyle/admin lowest."
+ph_3,ph_3_p018,802,505,rec17,C_low_comorbidity,"Patient A (id=802): age=47, risk=10, recommendations: rec5, rec17
+Patient B (id=505): age=45, risk=10, recommendations: rec5, rec6
+Which patient should be prioritized first?  [A / B / borderline]   confidence 1-5","A and B both have few other recs; A has rec17, B does not",10.0,10.0,47.0,45.0,"rec5,rec17","rec5,rec6",borderline,1,"Clinical prior scores nearly tied (A=3.96, B=3.76); no robust general priority."
+ph_3,ph_3_p019,802,505,rec17,A_matched_contrast,"Patient A (id=802): age=47, risk=10, recommendations: rec5, rec17
+Patient B (id=505): age=45, risk=10, recommendations: rec5, rec6
+Which patient should be prioritized first?  [A / B / borderline]   confidence 1-5","A and B matched on risk/age/num_recs; A has rec17, B does not",10.0,10.0,47.0,45.0,"rec5,rec17","rec5,rec6",borderline,1,"Clinical prior scores nearly tied (A=3.96, B=3.76); no robust general priority."
+ph_3,ph_3_p020,755,872,rec17,C_low_comorbidity,"Patient A (id=755): age=40, risk=9, recommendations: rec17
+Patient B (id=872): age=43, risk=9, recommendations: rec16
+Which patient should be prioritized first?  [A / B / borderline]   confidence 1-5","A and B both have few other recs; A has rec17, B does not",9.0,9.0,40.0,43.0,rec17,rec16,borderline,1,REC16 and REC17 are both specialist consults; no clear general priority without clinical details.
+ph_3,ph_3_p021,755,872,rec17,A_matched_contrast,"Patient A (id=755): age=40, risk=9, recommendations: rec17
+Patient B (id=872): age=43, risk=9, recommendations: rec16
+Which patient should be prioritized first?  [A / B / borderline]   confidence 1-5","A and B matched on risk/age/num_recs; A has rec17, B does not",9.0,9.0,40.0,43.0,rec17,rec16,borderline,1,REC16 and REC17 are both specialist consults; no clear general priority without clinical details.
+ph_3,ph_3_p022,744,112,rec17,C_low_comorbidity,"Patient A (id=744): age=55, risk=14, recommendations: rec1, rec17
+Patient B (id=112): age=54, risk=13, recommendations: rec1, rec2
+Which patient should be prioritized first?  [A / B / borderline]   confidence 1-5","A and B both have few other recs; A has rec17, B does not",14.0,13.0,55.0,54.0,"rec1,rec17","rec1,rec2",A,5,"Clinical-prior score A=3.75, B=1.65; chose A. Rule: medications/treatment upgrades highest, CTA/consults next, US/diagnostics middle, labs low, lifestyle/admin lowest."
+ph_3,ph_3_p023,744,112,rec17,A_matched_contrast,"Patient A (id=744): age=55, risk=14, recommendations: rec1, rec17
+Patient B (id=112): age=54, risk=13, recommendations: rec1, rec2
+Which patient should be prioritized first?  [A / B / borderline]   confidence 1-5","A and B matched on risk/age/num_recs; A has rec17, B does not",14.0,13.0,55.0,54.0,"rec1,rec17","rec1,rec2",A,5,"Clinical-prior score A=3.75, B=1.65; chose A. Rule: medications/treatment upgrades highest, CTA/consults next, US/diagnostics middle, labs low, lifestyle/admin lowest."
+ph_3,ph_3_p024,124,20,rec17,A_matched_contrast,"Patient A (id=124): age=33, risk=7, recommendations: rec17
+Patient B (id=20): age=33, risk=7, recommendations: (none)
+Which patient should be prioritized first?  [A / B / borderline]   confidence 1-5","A and B matched on risk/age/num_recs; A has rec17, B does not",7.0,7.0,33.0,33.0,rec17,,A,5,"Clinical-prior score A=3.60, B=0.00; chose A. Rule: medications/treatment upgrades highest, CTA/consults next, US/diagnostics middle, labs low, lifestyle/admin lowest."
+ph_4,ph_4_p001,305,969,rec5,C_low_comorbidity,"Patient A (id=305): age=54, risk=13, recommendations: rec5
+Patient B (id=969): age=54, risk=13, recommendations: rec6
+Which patient should be prioritized first?  [A / B / borderline]   confidence 1-5","A and B both have few other recs; A has rec5, B does not",13.0,13.0,54.0,54.0,rec5,rec6,B,3,"Clinical-prior score A=2.40, B=3.40; chose B. Rule: medications/treatment upgrades highest, CTA/consults next, US/diagnostics middle, labs low, lifestyle/admin lowest."
+ph_4,ph_4_p002,305,969,rec5,A_matched_contrast,"Patient A (id=305): age=54, risk=13, recommendations: rec5
+Patient B (id=969): age=54, risk=13, recommendations: rec6
+Which patient should be prioritized first?  [A / B / borderline]   confidence 1-5","A and B matched on risk/age/num_recs; A has rec5, B does not",13.0,13.0,54.0,54.0,rec5,rec6,B,3,"Clinical-prior score A=2.40, B=3.40; chose B. Rule: medications/treatment upgrades highest, CTA/consults next, US/diagnostics middle, labs low, lifestyle/admin lowest."
+ph_4,ph_4_p003,673,318,rec5,C_low_comorbidity,"Patient A (id=673): age=49, risk=11, recommendations: rec5
+Patient B (id=318): age=50, risk=11, recommendations: rec6
+Which patient should be prioritized first?  [A / B / borderline]   confidence 1-5","A and B both have few other recs; A has rec5, B does not",11.0,11.0,49.0,50.0,rec5,rec6,B,3,"Clinical-prior score A=2.40, B=3.40; chose B. Rule: medications/treatment upgrades highest, CTA/consults next, US/diagnostics middle, labs low, lifestyle/admin lowest."
+ph_4,ph_4_p004,673,318,rec5,A_matched_contrast,"Patient A (id=673): age=49, risk=11, recommendations: rec5
+Patient B (id=318): age=50, risk=11, recommendations: rec6
+Which patient should be prioritized first?  [A / B / borderline]   confidence 1-5","A and B matched on risk/age/num_recs; A has rec5, B does not",11.0,11.0,49.0,50.0,rec5,rec6,B,3,"Clinical-prior score A=2.40, B=3.40; chose B. Rule: medications/treatment upgrades highest, CTA/consults next, US/diagnostics middle, labs low, lifestyle/admin lowest."
+ph_4,ph_4_p005,810,172,rec5,A_matched_contrast,"Patient A (id=810): age=41, risk=9, recommendations: rec5
+Patient B (id=172): age=42, risk=9, recommendations: rec6
+Which patient should be prioritized first?  [A / B / borderline]   confidence 1-5","A and B matched on risk/age/num_recs; A has rec5, B does not",9.0,9.0,41.0,42.0,rec5,rec6,B,3,"Clinical-prior score A=2.40, B=3.40; chose B. Rule: medications/treatment upgrades highest, CTA/consults next, US/diagnostics middle, labs low, lifestyle/admin lowest."
+ph_4,ph_4_p006,810,172,rec5,C_low_comorbidity,"Patient A (id=810): age=41, risk=9, recommendations: rec5
+Patient B (id=172): age=42, risk=9, recommendations: rec6
+Which patient should be prioritized first?  [A / B / borderline]   confidence 1-5","A and B both have few other recs; A has rec5, B does not",9.0,9.0,41.0,42.0,rec5,rec6,B,3,"Clinical-prior score A=2.40, B=3.40; chose B. Rule: medications/treatment upgrades highest, CTA/consults next, US/diagnostics middle, labs low, lifestyle/admin lowest."
+ph_4,ph_4_p007,314,230,rec5,A_matched_contrast,"Patient A (id=314): age=67, risk=20, recommendations: rec5
+Patient B (id=230): age=65, risk=20, recommendations: rec8
+Which patient should be prioritized first?  [A / B / borderline]   confidence 1-5","A and B matched on risk/age/num_recs; A has rec5, B does not",20.0,20.0,67.0,65.0,rec5,rec8,A,4,"Clinical-prior score A=2.40, B=0.80; chose A. Rule: medications/treatment upgrades highest, CTA/consults next, US/diagnostics middle, labs low, lifestyle/admin lowest."
+ph_4,ph_4_p008,314,230,rec5,C_low_comorbidity,"Patient A (id=314): age=67, risk=20, recommendations: rec5
+Patient B (id=230): age=65, risk=20, recommendations: rec8
+Which patient should be prioritized first?  [A / B / borderline]   confidence 1-5","A and B both have few other recs; A has rec5, B does not",20.0,20.0,67.0,65.0,rec5,rec8,A,4,"Clinical-prior score A=2.40, B=0.80; chose A. Rule: medications/treatment upgrades highest, CTA/consults next, US/diagnostics middle, labs low, lifestyle/admin lowest."
+ph_2,ph_2_p001,21,966,rec12,A_matched_contrast,"Patient A (id=21): age=76, risk=24, recommendations: rec1, rec12
+Patient B (id=966): age=76, risk=24, recommendations: rec1, rec10
+Which patient should be prioritized first?  [A / B / borderline]   confidence 1-5","A and B matched on risk/age/num_recs; A has rec12, B does not",24.0,24.0,76.0,76.0,"rec1,rec12","rec1,rec10",A,2,"Clinical-prior score A=4.75, B=4.15; chose A. Rule: medications/treatment upgrades highest, CTA/consults next, US/diagnostics middle, labs low, lifestyle/admin lowest."
+ph_2,ph_2_p002,777,967,rec12,C_low_comorbidity,"Patient A (id=777): age=44, risk=9, recommendations: rec1, rec12
+Patient B (id=967): age=44, risk=9, recommendations: rec1, rec10
+Which patient should be prioritized first?  [A / B / borderline]   confidence 1-5","A and B both have few other recs; A has rec12, B does not",9.0,9.0,44.0,44.0,"rec1,rec12","rec1,rec10",A,2,"Clinical-prior score A=4.75, B=4.15; chose A. Rule: medications/treatment upgrades highest, CTA/consults next, US/diagnostics middle, labs low, lifestyle/admin lowest."
+ph_2,ph_2_p003,420,321,rec12,C_low_comorbidity,"Patient A (id=420): age=56, risk=14, recommendations: rec12
+Patient B (id=321): age=56, risk=14, recommendations: rec10
+Which patient should be prioritized first?  [A / B / borderline]   confidence 1-5","A and B both have few other recs; A has rec12, B does not",14.0,14.0,56.0,56.0,rec12,rec10,A,2,"Clinical-prior score A=4.60, B=4.00; chose A. Rule: medications/treatment upgrades highest, CTA/consults next, US/diagnostics middle, labs low, lifestyle/admin lowest."
+ph_2,ph_2_p004,233,274,rec12,C_low_comorbidity,"Patient A (id=233): age=55, risk=13, recommendations: rec12
+Patient B (id=274): age=55, risk=13, recommendations: rec10
+Which patient should be prioritized first?  [A / B / borderline]   confidence 1-5","A and B both have few other recs; A has rec12, B does not",13.0,13.0,55.0,55.0,rec12,rec10,A,2,"Clinical-prior score A=4.60, B=4.00; chose A. Rule: medications/treatment upgrades highest, CTA/consults next, US/diagnostics middle, labs low, lifestyle/admin lowest."
+ph_2,ph_2_p005,161,753,rec12,C_low_comorbidity,"Patient A (id=161): age=40, risk=8, recommendations: rec12
+Patient B (id=753): age=40, risk=8, recommendations: rec10
+Which patient should be prioritized first?  [A / B / borderline]   confidence 1-5","A and B both have few other recs; A has rec12, B does not",8.0,8.0,40.0,40.0,rec12,rec10,A,2,"Clinical-prior score A=4.60, B=4.00; chose A. Rule: medications/treatment upgrades highest, CTA/consults next, US/diagnostics middle, labs low, lifestyle/admin lowest."
+ph_2,ph_2_p006,21,966,rec12,C_low_comorbidity,"Patient A (id=21): age=76, risk=24, recommendations: rec1, rec12
+Patient B (id=966): age=76, risk=24, recommendations: rec1, rec10
+Which patient should be prioritized first?  [A / B / borderline]   confidence 1-5","A and B both have few other recs; A has rec12, B does not",24.0,24.0,76.0,76.0,"rec1,rec12","rec1,rec10",A,2,"Clinical-prior score A=4.75, B=4.15; chose A. Rule: medications/treatment upgrades highest, CTA/consults next, US/diagnostics middle, labs low, lifestyle/admin lowest."
+ph_2,ph_2_p007,719,691,rec12,C_low_comorbidity,"Patient A (id=719): age=49, risk=11, recommendations: rec4, rec12
+Patient B (id=691): age=49, risk=11, recommendations: rec1, rec11
+Which patient should be prioritized first?  [A / B / borderline]   confidence 1-5","A and B both have few other recs; A has rec12, B does not",11.0,11.0,49.0,49.0,"rec4,rec12","rec1,rec11",borderline,1,"Clinical prior scores nearly tied (A=4.85, B=5.15); no robust general priority."
+ph_2,ph_2_p008,777,967,rec12,A_matched_contrast,"Patient A (id=777): age=44, risk=9, recommendations: rec1, rec12
+Patient B (id=967): age=44, risk=9, recommendations: rec1, rec10
+Which patient should be prioritized first?  [A / B / borderline]   confidence 1-5","A and B matched on risk/age/num_recs; A has rec12, B does not",9.0,9.0,44.0,44.0,"rec1,rec12","rec1,rec10",A,2,"Clinical-prior score A=4.75, B=4.15; chose A. Rule: medications/treatment upgrades highest, CTA/consults next, US/diagnostics middle, labs low, lifestyle/admin lowest."
+fm_3,fm_3_p001,21,966,rec12,A_matched_contrast,"Patient A (id=21): age=76, risk=24, recommendations: rec1, rec12
+Patient B (id=966): age=76, risk=24, recommendations: rec1, rec10
+Which patient should be prioritized first?  [A / B / borderline]   confidence 1-5","A and B matched on risk/age/num_recs; A has rec12, B does not",24.0,24.0,76.0,76.0,"rec1,rec12","rec1,rec10",A,2,"Clinical-prior score A=4.75, B=4.15; chose A. Rule: medications/treatment upgrades highest, CTA/consults next, US/diagnostics middle, labs low, lifestyle/admin lowest."
+fm_3,fm_3_p002,21,966,rec12,C_low_comorbidity,"Patient A (id=21): age=76, risk=24, recommendations: rec1, rec12
+Patient B (id=966): age=76, risk=24, recommendations: rec1, rec10
+Which patient should be prioritized first?  [A / B / borderline]   confidence 1-5","A and B both have few other recs; A has rec12, B does not",24.0,24.0,76.0,76.0,"rec1,rec12","rec1,rec10",A,2,"Clinical-prior score A=4.75, B=4.15; chose A. Rule: medications/treatment upgrades highest, CTA/consults next, US/diagnostics middle, labs low, lifestyle/admin lowest."
+fm_3,fm_3_p003,687,350,rec12,C_low_comorbidity,"Patient A (id=687): age=51, risk=12, recommendations: rec12
+Patient B (id=350): age=51, risk=12, recommendations: rec10
+Which patient should be prioritized first?  [A / B / borderline]   confidence 1-5","A and B both have few other recs; A has rec12, B does not",12.0,12.0,51.0,51.0,rec12,rec10,A,2,"Clinical-prior score A=4.60, B=4.00; chose A. Rule: medications/treatment upgrades highest, CTA/consults next, US/diagnostics middle, labs low, lifestyle/admin lowest."
+fm_3,fm_3_p004,777,967,rec12,A_matched_contrast,"Patient A (id=777): age=44, risk=9, recommendations: rec1, rec12
+Patient B (id=967): age=44, risk=9, recommendations: rec1, rec10
+Which patient should be prioritized first?  [A / B / borderline]   confidence 1-5","A and B matched on risk/age/num_recs; A has rec12, B does not",9.0,9.0,44.0,44.0,"rec1,rec12","rec1,rec10",A,2,"Clinical-prior score A=4.75, B=4.15; chose A. Rule: medications/treatment upgrades highest, CTA/consults next, US/diagnostics middle, labs low, lifestyle/admin lowest."
+fm_3,fm_3_p005,719,691,rec12,A_matched_contrast,"Patient A (id=719): age=49, risk=11, recommendations: rec4, rec12
+Patient B (id=691): age=49, risk=11, recommendations: rec1, rec11
+Which patient should be prioritized first?  [A / B / borderline]   confidence 1-5","A and B matched on risk/age/num_recs; A has rec12, B does not",11.0,11.0,49.0,49.0,"rec4,rec12","rec1,rec11",borderline,1,"Clinical prior scores nearly tied (A=4.85, B=5.15); no robust general priority."
+fm_3,fm_3_p006,687,350,rec12,A_matched_contrast,"Patient A (id=687): age=51, risk=12, recommendations: rec12
+Patient B (id=350): age=51, risk=12, recommendations: rec10
+Which patient should be prioritized first?  [A / B / borderline]   confidence 1-5","A and B matched on risk/age/num_recs; A has rec12, B does not",12.0,12.0,51.0,51.0,rec12,rec10,A,2,"Clinical-prior score A=4.60, B=4.00; chose A. Rule: medications/treatment upgrades highest, CTA/consults next, US/diagnostics middle, labs low, lifestyle/admin lowest."
+fm_3,fm_3_p007,161,753,rec12,C_low_comorbidity,"Patient A (id=161): age=40, risk=8, recommendations: rec12
+Patient B (id=753): age=40, risk=8, recommendations: rec10
+Which patient should be prioritized first?  [A / B / borderline]   confidence 1-5","A and B both have few other recs; A has rec12, B does not",8.0,8.0,40.0,40.0,rec12,rec10,A,2,"Clinical-prior score A=4.60, B=4.00; chose A. Rule: medications/treatment upgrades highest, CTA/consults next, US/diagnostics middle, labs low, lifestyle/admin lowest."
+fm_3,fm_3_p008,415,51,rec12,A_matched_contrast,"Patient A (id=415): age=59, risk=15, recommendations: rec5, rec12, rec19
+Patient B (id=51): age=59, risk=15, recommendations: rec5, rec6, rec19
+Which patient should be prioritized first?  [A / B / borderline]   confidence 1-5","A and B matched on risk/age/num_recs; A has rec12, B does not",15.0,15.0,59.0,59.0,"rec5,rec12,rec19","rec5,rec6,rec19",A,3,"Clinical-prior score A=5.03, B=3.83; chose A. Rule: medications/treatment upgrades highest, CTA/consults next, US/diagnostics middle, labs low, lifestyle/admin lowest."
+fm_4,fm_4_p001,187,184,rec1,A_matched_contrast,"Patient A (id=187): age=62, risk=16, recommendations: rec1
+Patient B (id=184): age=62, risk=16, recommendations: rec2
+Which patient should be prioritized first?  [A / B / borderline]   confidence 1-5","A and B matched on risk/age/num_recs; A has rec1, B does not",16.0,16.0,62.0,62.0,rec1,rec2,B,2,"Clinical-prior score A=1.00, B=1.50; chose B. Rule: medications/treatment upgrades highest, CTA/consults next, US/diagnostics middle, labs low, lifestyle/admin lowest."
+fm_4,fm_4_p002,365,686,rec1,C_low_comorbidity,"Patient A (id=365): age=65, risk=19, recommendations: rec1
+Patient B (id=686): age=65, risk=19, recommendations: rec2
+Which patient should be prioritized first?  [A / B / borderline]   confidence 1-5","A and B both have few other recs; A has rec1, B does not",19.0,19.0,65.0,65.0,rec1,rec2,B,2,"Clinical-prior score A=1.00, B=1.50; chose B. Rule: medications/treatment upgrades highest, CTA/consults next, US/diagnostics middle, labs low, lifestyle/admin lowest."
+fm_4,fm_4_p003,305,969,rec5,A_matched_contrast,"Patient A (id=305): age=54, risk=13, recommendations: rec5
+Patient B (id=969): age=54, risk=13, recommendations: rec6
+Which patient should be prioritized first?  [A / B / borderline]   confidence 1-5","A and B matched on risk/age/num_recs; A has rec5, B does not",13.0,13.0,54.0,54.0,rec5,rec6,B,3,"Clinical-prior score A=2.40, B=3.40; chose B. Rule: medications/treatment upgrades highest, CTA/consults next, US/diagnostics middle, labs low, lifestyle/admin lowest."
+fm_4,fm_4_p004,878,367,rec1,D_rec10_isolation,"Patient A (id=878): age=58, risk=15, recommendations: rec1, rec10
+Patient B (id=367): age=58, risk=15, recommendations: rec2, rec10
+Which patient should be prioritized first?  [A / B / borderline]   confidence 1-5",Both A and B have rec10; only A has rec1,15.0,15.0,58.0,58.0,"rec1,rec10","rec2,rec10",borderline,1,"Clinical prior scores nearly tied (A=4.15, B=4.22); no robust general priority."
+fm_4,fm_4_p005,878,367,rec1,A_matched_contrast,"Patient A (id=878): age=58, risk=15, recommendations: rec1, rec10
+Patient B (id=367): age=58, risk=15, recommendations: rec2, rec10
+Which patient should be prioritized first?  [A / B / borderline]   confidence 1-5","A and B matched on risk/age/num_recs; A has rec1, B does not",15.0,15.0,58.0,58.0,"rec1,rec10","rec2,rec10",borderline,1,"Clinical prior scores nearly tied (A=4.15, B=4.22); no robust general priority."
+fm_4,fm_4_p006,736,184,rec1,A_matched_contrast,"Patient A (id=736): age=62, risk=16, recommendations: rec1
+Patient B (id=184): age=62, risk=16, recommendations: rec2
+Which patient should be prioritized first?  [A / B / borderline]   confidence 1-5","A and B matched on risk/age/num_recs; A has rec1, B does not",16.0,16.0,62.0,62.0,rec1,rec2,B,2,"Clinical-prior score A=1.00, B=1.50; chose B. Rule: medications/treatment upgrades highest, CTA/consults next, US/diagnostics middle, labs low, lifestyle/admin lowest."
+fm_4,fm_4_p007,365,686,rec1,A_matched_contrast,"Patient A (id=365): age=65, risk=19, recommendations: rec1
+Patient B (id=686): age=65, risk=19, recommendations: rec2
+Which patient should be prioritized first?  [A / B / borderline]   confidence 1-5","A and B matched on risk/age/num_recs; A has rec1, B does not",19.0,19.0,65.0,65.0,rec1,rec2,B,2,"Clinical-prior score A=1.00, B=1.50; chose B. Rule: medications/treatment upgrades highest, CTA/consults next, US/diagnostics middle, labs low, lifestyle/admin lowest."
+fm_4,fm_4_p008,215,806,rec4,A_matched_contrast,"Patient A (id=215): age=50, risk=11, recommendations: rec4
+Patient B (id=806): age=50, risk=11, recommendations: rec2
+Which patient should be prioritized first?  [A / B / borderline]   confidence 1-5","A and B matched on risk/age/num_recs; A has rec4, B does not",11.0,11.0,50.0,50.0,rec4,rec2,borderline,1,"Clinical prior scores nearly tied (A=1.70, B=1.50); no robust general priority."
+fm_4,fm_4_p009,215,806,rec4,C_low_comorbidity,"Patient A (id=215): age=50, risk=11, recommendations: rec4
+Patient B (id=806): age=50, risk=11, recommendations: rec2
+Which patient should be prioritized first?  [A / B / borderline]   confidence 1-5","A and B both have few other recs; A has rec4, B does not",11.0,11.0,50.0,50.0,rec4,rec2,borderline,1,"Clinical prior scores nearly tied (A=1.70, B=1.50); no robust general priority."
+fm_4,fm_4_p010,826,178,rec4,C_low_comorbidity,"Patient A (id=826): age=76, risk=24, recommendations: rec4
+Patient B (id=178): age=76, risk=24, recommendations: rec2
+Which patient should be prioritized first?  [A / B / borderline]   confidence 1-5","A and B both have few other recs; A has rec4, B does not",24.0,24.0,76.0,76.0,rec4,rec2,borderline,1,"Clinical prior scores nearly tied (A=1.70, B=1.50); no robust general priority."
+fm_4,fm_4_p011,305,969,rec5,C_low_comorbidity,"Patient A (id=305): age=54, risk=13, recommendations: rec5
+Patient B (id=969): age=54, risk=13, recommendations: rec6
+Which patient should be prioritized first?  [A / B / borderline]   confidence 1-5","A and B both have few other recs; A has rec5, B does not",13.0,13.0,54.0,54.0,rec5,rec6,B,3,"Clinical-prior score A=2.40, B=3.40; chose B. Rule: medications/treatment upgrades highest, CTA/consults next, US/diagnostics middle, labs low, lifestyle/admin lowest."
+fm_4,fm_4_p012,810,172,rec5,A_matched_contrast,"Patient A (id=810): age=41, risk=9, recommendations: rec5
+Patient B (id=172): age=42, risk=9, recommendations: rec6
+Which patient should be prioritized first?  [A / B / borderline]   confidence 1-5","A and B matched on risk/age/num_recs; A has rec5, B does not",9.0,9.0,41.0,42.0,rec5,rec6,B,3,"Clinical-prior score A=2.40, B=3.40; chose B. Rule: medications/treatment upgrades highest, CTA/consults next, US/diagnostics middle, labs low, lifestyle/admin lowest."
+fm_4,fm_4_p013,810,172,rec5,C_low_comorbidity,"Patient A (id=810): age=41, risk=9, recommendations: rec5
+Patient B (id=172): age=42, risk=9, recommendations: rec6
+Which patient should be prioritized first?  [A / B / borderline]   confidence 1-5","A and B both have few other recs; A has rec5, B does not",9.0,9.0,41.0,42.0,rec5,rec6,B,3,"Clinical-prior score A=2.40, B=3.40; chose B. Rule: medications/treatment upgrades highest, CTA/consults next, US/diagnostics middle, labs low, lifestyle/admin lowest."
+fm_4,fm_4_p014,673,318,rec5,A_matched_contrast,"Patient A (id=673): age=49, risk=11, recommendations: rec5
+Patient B (id=318): age=50, risk=11, recommendations: rec6
+Which patient should be prioritized first?  [A / B / borderline]   confidence 1-5","A and B matched on risk/age/num_recs; A has rec5, B does not",11.0,11.0,49.0,50.0,rec5,rec6,B,3,"Clinical-prior score A=2.40, B=3.40; chose B. Rule: medications/treatment upgrades highest, CTA/consults next, US/diagnostics middle, labs low, lifestyle/admin lowest."
+fm_4,fm_4_p015,396,804,rec1,A_matched_contrast,"Patient A (id=396): age=47, risk=10, recommendations: rec1, rec10
+Patient B (id=804): age=48, risk=10, recommendations: rec3, rec10
+Which patient should be prioritized first?  [A / B / borderline]   confidence 1-5","A and B matched on risk/age/num_recs; A has rec1, B does not",10.0,10.0,47.0,48.0,"rec1,rec10","rec3,rec10",borderline,1,"Clinical prior scores nearly tied (A=4.15, B=4.20); no robust general priority."
+fm_4,fm_4_p016,384,804,rec1,D_rec10_isolation,"Patient A (id=384): age=47, risk=10, recommendations: rec1, rec10
+Patient B (id=804): age=48, risk=10, recommendations: rec3, rec10
+Which patient should be prioritized first?  [A / B / borderline]   confidence 1-5",Both A and B have rec10; only A has rec1,10.0,10.0,47.0,48.0,"rec1,rec10","rec3,rec10",borderline,1,"Clinical prior scores nearly tied (A=4.15, B=4.20); no robust general priority."
+fm_4,fm_4_p017,673,318,rec5,C_low_comorbidity,"Patient A (id=673): age=49, risk=11, recommendations: rec5
+Patient B (id=318): age=50, risk=11, recommendations: rec6
+Which patient should be prioritized first?  [A / B / borderline]   confidence 1-5","A and B both have few other recs; A has rec5, B does not",11.0,11.0,49.0,50.0,rec5,rec6,B,3,"Clinical-prior score A=2.40, B=3.40; chose B. Rule: medications/treatment upgrades highest, CTA/consults next, US/diagnostics middle, labs low, lifestyle/admin lowest."
+fm_4,fm_4_p018,314,230,rec5,A_matched_contrast,"Patient A (id=314): age=67, risk=20, recommendations: rec5
+Patient B (id=230): age=65, risk=20, recommendations: rec8
+Which patient should be prioritized first?  [A / B / borderline]   confidence 1-5","A and B matched on risk/age/num_recs; A has rec5, B does not",20.0,20.0,67.0,65.0,rec5,rec8,A,4,"Clinical-prior score A=2.40, B=0.80; chose A. Rule: medications/treatment upgrades highest, CTA/consults next, US/diagnostics middle, labs low, lifestyle/admin lowest."
+fm_4,fm_4_p019,314,230,rec5,C_low_comorbidity,"Patient A (id=314): age=67, risk=20, recommendations: rec5
+Patient B (id=230): age=65, risk=20, recommendations: rec8
+Which patient should be prioritized first?  [A / B / borderline]   confidence 1-5","A and B both have few other recs; A has rec5, B does not",20.0,20.0,67.0,65.0,rec5,rec8,A,4,"Clinical-prior score A=2.40, B=0.80; chose A. Rule: medications/treatment upgrades highest, CTA/consults next, US/diagnostics middle, labs low, lifestyle/admin lowest."
+fm_4,fm_4_p020,847,289,rec4,A_matched_contrast,"Patient A (id=847): age=59, risk=16, recommendations: rec2, rec4
+Patient B (id=289): age=59, risk=15, recommendations: rec1, rec2
+Which patient should be prioritized first?  [A / B / borderline]   confidence 1-5","A and B matched on risk/age/num_recs; A has rec4, B does not",16.0,15.0,59.0,59.0,"rec2,rec4","rec1,rec2",borderline,1,"Clinical prior scores nearly tied (A=1.92, B=1.65); no robust general priority."
+fm_4,fm_4_p021,847,289,rec4,C_low_comorbidity,"Patient A (id=847): age=59, risk=16, recommendations: rec2, rec4
+Patient B (id=289): age=59, risk=15, recommendations: rec1, rec2
+Which patient should be prioritized first?  [A / B / borderline]   confidence 1-5","A and B both have few other recs; A has rec4, B does not",16.0,15.0,59.0,59.0,"rec2,rec4","rec1,rec2",borderline,1,"Clinical prior scores nearly tied (A=1.92, B=1.65); no robust general priority."
+fm_4,fm_4_p022,151,404,rec4,A_matched_contrast,"Patient A (id=151): age=58, risk=14, recommendations: rec2, rec4, rec19
+Patient B (id=404): age=55, risk=14, recommendations: rec1, rec18, rec19
+Which patient should be prioritized first?  [A / B / borderline]   confidence 1-5","A and B matched on risk/age/num_recs; A has rec4, B does not",14.0,14.0,58.0,55.0,"rec2,rec4,rec19","rec1,rec18,rec19",A,3,"Clinical-prior score A=2.00, B=1.15; chose A. Rule: medications/treatment upgrades highest, CTA/consults next, US/diagnostics middle, labs low, lifestyle/admin lowest."
+fm_4,fm_4_p023,271,475,rec4,C_low_comorbidity,"Patient A (id=271): age=76, risk=25, recommendations: rec4, rec6
+Patient B (id=475): age=79, risk=25, recommendations: rec1, rec5
+Which patient should be prioritized first?  [A / B / borderline]   confidence 1-5","A and B both have few other recs; A has rec4, B does not",25.0,25.0,76.0,79.0,"rec4,rec6","rec1,rec5",A,3,"Clinical-prior score A=3.65, B=2.55; chose A. Rule: medications/treatment upgrades highest, CTA/consults next, US/diagnostics middle, labs low, lifestyle/admin lowest."
+fm_4,fm_4_p024,271,475,rec4,A_matched_contrast,"Patient A (id=271): age=76, risk=25, recommendations: rec4, rec6
+Patient B (id=475): age=79, risk=25, recommendations: rec1, rec5
+Which patient should be prioritized first?  [A / B / borderline]   confidence 1-5","A and B matched on risk/age/num_recs; A has rec4, B does not",25.0,25.0,76.0,79.0,"rec4,rec6","rec1,rec5",A,3,"Clinical-prior score A=3.65, B=2.55; chose A. Rule: medications/treatment upgrades highest, CTA/consults next, US/diagnostics middle, labs low, lifestyle/admin lowest."
+fm_4,fm_4_p025,420,321,rec12,C_low_comorbidity,"Patient A (id=420): age=56, risk=14, recommendations: rec12
+Patient B (id=321): age=56, risk=14, recommendations: rec10
+Which patient should be prioritized first?  [A / B / borderline]   confidence 1-5","A and B both have few other recs; A has rec12, B does not",14.0,14.0,56.0,56.0,rec12,rec10,A,2,"Clinical-prior score A=4.60, B=4.00; chose A. Rule: medications/treatment upgrades highest, CTA/consults next, US/diagnostics middle, labs low, lifestyle/admin lowest."
+fm_4,fm_4_p026,455,9,rec11,A_matched_contrast,"Patient A (id=455): age=47, risk=11, recommendations: rec11
+Patient B (id=9): age=47, risk=11, recommendations: rec10
+Which patient should be prioritized first?  [A / B / borderline]   confidence 1-5","A and B matched on risk/age/num_recs; A has rec11, B does not",11.0,11.0,47.0,47.0,rec11,rec10,A,3,"Clinical-prior score A=5.00, B=4.00; chose A. Rule: medications/treatment upgrades highest, CTA/consults next, US/diagnostics middle, labs low, lifestyle/admin lowest."
+fm_4,fm_4_p027,455,9,rec11,C_low_comorbidity,"Patient A (id=455): age=47, risk=11, recommendations: rec11
+Patient B (id=9): age=47, risk=11, recommendations: rec10
+Which patient should be prioritized first?  [A / B / borderline]   confidence 1-5","A and B both have few other recs; A has rec11, B does not",11.0,11.0,47.0,47.0,rec11,rec10,A,3,"Clinical-prior score A=5.00, B=4.00; chose A. Rule: medications/treatment upgrades highest, CTA/consults next, US/diagnostics middle, labs low, lifestyle/admin lowest."
+fm_4,fm_4_p028,415,51,rec12,A_matched_contrast,"Patient A (id=415): age=59, risk=15, recommendations: rec5, rec12, rec19
+Patient B (id=51): age=59, risk=15, recommendations: rec5, rec6, rec19
+Which patient should be prioritized first?  [A / B / borderline]   confidence 1-5","A and B matched on risk/age/num_recs; A has rec12, B does not",15.0,15.0,59.0,59.0,"rec5,rec12,rec19","rec5,rec6,rec19",A,3,"Clinical-prior score A=5.03, B=3.83; chose A. Rule: medications/treatment upgrades highest, CTA/consults next, US/diagnostics middle, labs low, lifestyle/admin lowest."
+fm_4,fm_4_p029,420,321,rec12,A_matched_contrast,"Patient A (id=420): age=56, risk=14, recommendations: rec12
+Patient B (id=321): age=56, risk=14, recommendations: rec10
+Which patient should be prioritized first?  [A / B / borderline]   confidence 1-5","A and B matched on risk/age/num_recs; A has rec12, B does not",14.0,14.0,56.0,56.0,rec12,rec10,A,2,"Clinical-prior score A=4.60, B=4.00; chose A. Rule: medications/treatment upgrades highest, CTA/consults next, US/diagnostics middle, labs low, lifestyle/admin lowest."
+fm_4,fm_4_p030,161,753,rec12,A_matched_contrast,"Patient A (id=161): age=40, risk=8, recommendations: rec12
+Patient B (id=753): age=40, risk=8, recommendations: rec10
+Which patient should be prioritized first?  [A / B / borderline]   confidence 1-5","A and B matched on risk/age/num_recs; A has rec12, B does not",8.0,8.0,40.0,40.0,rec12,rec10,A,2,"Clinical-prior score A=4.60, B=4.00; chose A. Rule: medications/treatment upgrades highest, CTA/consults next, US/diagnostics middle, labs low, lifestyle/admin lowest."
+fm_5,fm_5_p001,305,969,rec5,C_low_comorbidity,"Patient A (id=305): age=54, risk=13, recommendations: rec5
+Patient B (id=969): age=54, risk=13, recommendations: rec6
+Which patient should be prioritized first?  [A / B / borderline]   confidence 1-5","A and B both have few other recs; A has rec5, B does not",13.0,13.0,54.0,54.0,rec5,rec6,B,3,"Clinical-prior score A=2.40, B=3.40; chose B. Rule: medications/treatment upgrades highest, CTA/consults next, US/diagnostics middle, labs low, lifestyle/admin lowest."
+fm_5,fm_5_p002,305,969,rec5,A_matched_contrast,"Patient A (id=305): age=54, risk=13, recommendations: rec5
+Patient B (id=969): age=54, risk=13, recommendations: rec6
+Which patient should be prioritized first?  [A / B / borderline]   confidence 1-5","A and B matched on risk/age/num_recs; A has rec5, B does not",13.0,13.0,54.0,54.0,rec5,rec6,B,3,"Clinical-prior score A=2.40, B=3.40; chose B. Rule: medications/treatment upgrades highest, CTA/consults next, US/diagnostics middle, labs low, lifestyle/admin lowest."
+fm_5,fm_5_p003,810,172,rec5,C_low_comorbidity,"Patient A (id=810): age=41, risk=9, recommendations: rec5
+Patient B (id=172): age=42, risk=9, recommendations: rec6
+Which patient should be prioritized first?  [A / B / borderline]   confidence 1-5","A and B both have few other recs; A has rec5, B does not",9.0,9.0,41.0,42.0,rec5,rec6,B,3,"Clinical-prior score A=2.40, B=3.40; chose B. Rule: medications/treatment upgrades highest, CTA/consults next, US/diagnostics middle, labs low, lifestyle/admin lowest."
+fm_5,fm_5_p004,673,318,rec5,A_matched_contrast,"Patient A (id=673): age=49, risk=11, recommendations: rec5
+Patient B (id=318): age=50, risk=11, recommendations: rec6
+Which patient should be prioritized first?  [A / B / borderline]   confidence 1-5","A and B matched on risk/age/num_recs; A has rec5, B does not",11.0,11.0,49.0,50.0,rec5,rec6,B,3,"Clinical-prior score A=2.40, B=3.40; chose B. Rule: medications/treatment upgrades highest, CTA/consults next, US/diagnostics middle, labs low, lifestyle/admin lowest."
+fm_5,fm_5_p005,810,172,rec5,A_matched_contrast,"Patient A (id=810): age=41, risk=9, recommendations: rec5
+Patient B (id=172): age=42, risk=9, recommendations: rec6
+Which patient should be prioritized first?  [A / B / borderline]   confidence 1-5","A and B matched on risk/age/num_recs; A has rec5, B does not",9.0,9.0,41.0,42.0,rec5,rec6,B,3,"Clinical-prior score A=2.40, B=3.40; chose B. Rule: medications/treatment upgrades highest, CTA/consults next, US/diagnostics middle, labs low, lifestyle/admin lowest."
+fm_5,fm_5_p006,673,318,rec5,C_low_comorbidity,"Patient A (id=673): age=49, risk=11, recommendations: rec5
+Patient B (id=318): age=50, risk=11, recommendations: rec6
+Which patient should be prioritized first?  [A / B / borderline]   confidence 1-5","A and B both have few other recs; A has rec5, B does not",11.0,11.0,49.0,50.0,rec5,rec6,B,3,"Clinical-prior score A=2.40, B=3.40; chose B. Rule: medications/treatment upgrades highest, CTA/consults next, US/diagnostics middle, labs low, lifestyle/admin lowest."
+fm_5,fm_5_p007,314,230,rec5,C_low_comorbidity,"Patient A (id=314): age=67, risk=20, recommendations: rec5
+Patient B (id=230): age=65, risk=20, recommendations: rec8
+Which patient should be prioritized first?  [A / B / borderline]   confidence 1-5","A and B both have few other recs; A has rec5, B does not",20.0,20.0,67.0,65.0,rec5,rec8,A,4,"Clinical-prior score A=2.40, B=0.80; chose A. Rule: medications/treatment upgrades highest, CTA/consults next, US/diagnostics middle, labs low, lifestyle/admin lowest."
+fm_5,fm_5_p008,314,230,rec5,A_matched_contrast,"Patient A (id=314): age=67, risk=20, recommendations: rec5
+Patient B (id=230): age=65, risk=20, recommendations: rec8
+Which patient should be prioritized first?  [A / B / borderline]   confidence 1-5","A and B matched on risk/age/num_recs; A has rec5, B does not",20.0,20.0,67.0,65.0,rec5,rec8,A,4,"Clinical-prior score A=2.40, B=0.80; chose A. Rule: medications/treatment upgrades highest, CTA/consults next, US/diagnostics middle, labs low, lifestyle/admin lowest."
+fm_5,fm_5_p009,21,966,rec12,C_low_comorbidity,"Patient A (id=21): age=76, risk=24, recommendations: rec1, rec12
+Patient B (id=966): age=76, risk=24, recommendations: rec1, rec10
+Which patient should be prioritized first?  [A / B / borderline]   confidence 1-5","A and B both have few other recs; A has rec12, B does not",24.0,24.0,76.0,76.0,"rec1,rec12","rec1,rec10",A,2,"Clinical-prior score A=4.75, B=4.15; chose A. Rule: medications/treatment upgrades highest, CTA/consults next, US/diagnostics middle, labs low, lifestyle/admin lowest."
+fm_5,fm_5_p010,233,274,rec12,A_matched_contrast,"Patient A (id=233): age=55, risk=13, recommendations: rec12
+Patient B (id=274): age=55, risk=13, recommendations: rec10
+Which patient should be prioritized first?  [A / B / borderline]   confidence 1-5","A and B matched on risk/age/num_recs; A has rec12, B does not",13.0,13.0,55.0,55.0,rec12,rec10,A,2,"Clinical-prior score A=4.60, B=4.00; chose A. Rule: medications/treatment upgrades highest, CTA/consults next, US/diagnostics middle, labs low, lifestyle/admin lowest."
+fm_5,fm_5_p011,161,753,rec12,A_matched_contrast,"Patient A (id=161): age=40, risk=8, recommendations: rec12
+Patient B (id=753): age=40, risk=8, recommendations: rec10
+Which patient should be prioritized first?  [A / B / borderline]   confidence 1-5","A and B matched on risk/age/num_recs; A has rec12, B does not",8.0,8.0,40.0,40.0,rec12,rec10,A,2,"Clinical-prior score A=4.60, B=4.00; chose A. Rule: medications/treatment upgrades highest, CTA/consults next, US/diagnostics middle, labs low, lifestyle/admin lowest."
+fm_5,fm_5_p012,21,966,rec12,A_matched_contrast,"Patient A (id=21): age=76, risk=24, recommendations: rec1, rec12
+Patient B (id=966): age=76, risk=24, recommendations: rec1, rec10
+Which patient should be prioritized first?  [A / B / borderline]   confidence 1-5","A and B matched on risk/age/num_recs; A has rec12, B does not",24.0,24.0,76.0,76.0,"rec1,rec12","rec1,rec10",A,2,"Clinical-prior score A=4.75, B=4.15; chose A. Rule: medications/treatment upgrades highest, CTA/consults next, US/diagnostics middle, labs low, lifestyle/admin lowest."
+fm_5,fm_5_p013,687,350,rec12,A_matched_contrast,"Patient A (id=687): age=51, risk=12, recommendations: rec12
+Patient B (id=350): age=51, risk=12, recommendations: rec10
+Which patient should be prioritized first?  [A / B / borderline]   confidence 1-5","A and B matched on risk/age/num_recs; A has rec12, B does not",12.0,12.0,51.0,51.0,rec12,rec10,A,2,"Clinical-prior score A=4.60, B=4.00; chose A. Rule: medications/treatment upgrades highest, CTA/consults next, US/diagnostics middle, labs low, lifestyle/admin lowest."
+fm_5,fm_5_p014,719,691,rec12,A_matched_contrast,"Patient A (id=719): age=49, risk=11, recommendations: rec4, rec12
+Patient B (id=691): age=49, risk=11, recommendations: rec1, rec11
+Which patient should be prioritized first?  [A / B / borderline]   confidence 1-5","A and B matched on risk/age/num_recs; A has rec12, B does not",11.0,11.0,49.0,49.0,"rec4,rec12","rec1,rec11",borderline,1,"Clinical prior scores nearly tied (A=4.85, B=5.15); no robust general priority."
+fm_5,fm_5_p015,777,967,rec12,A_matched_contrast,"Patient A (id=777): age=44, risk=9, recommendations: rec1, rec12
+Patient B (id=967): age=44, risk=9, recommendations: rec1, rec10
+Which patient should be prioritized first?  [A / B / borderline]   confidence 1-5","A and B matched on risk/age/num_recs; A has rec12, B does not",9.0,9.0,44.0,44.0,"rec1,rec12","rec1,rec10",A,2,"Clinical-prior score A=4.75, B=4.15; chose A. Rule: medications/treatment upgrades highest, CTA/consults next, US/diagnostics middle, labs low, lifestyle/admin lowest."
+fm_5,fm_5_p016,420,321,rec12,A_matched_contrast,"Patient A (id=420): age=56, risk=14, recommendations: rec12
+Patient B (id=321): age=56, risk=14, recommendations: rec10
+Which patient should be prioritized first?  [A / B / borderline]   confidence 1-5","A and B matched on risk/age/num_recs; A has rec12, B does not",14.0,14.0,56.0,56.0,rec12,rec10,A,2,"Clinical-prior score A=4.60, B=4.00; chose A. Rule: medications/treatment upgrades highest, CTA/consults next, US/diagnostics middle, labs low, lifestyle/admin lowest."

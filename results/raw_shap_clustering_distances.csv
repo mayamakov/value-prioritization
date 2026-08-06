@@ -1,0 +1,27 @@
+rater,label,family,entity_type,distance_raw_shap
+fm_3,FM-3,Humans,human,0.02304485907384534
+ph_4,PH-4,Humans,human,0.03336129384783066
+ph_2,PH-2,Humans,human,0.03344572022608706
+ph_3,PH-3,Humans,human,0.03357243125505764
+fm_1,FM-1,Humans,human,0.034298421455783275
+ph_1,PH-1,Humans,human,0.03656053244680281
+fm_4,FM-4,Humans,human,0.044464674540030336
+ph_5,PH-5,Humans,human,0.05140508802349551
+fm_2,FM-2,Humans,human,0.05380208832000137
+gemini_3_5_flash,Gemini 3.5 Flash,Google,llm,0.06316047653278917
+fm_5,FM-5,Humans,human,0.06599163018071462
+doctor10,Llama-4 Maverick,Meta,llm,0.07015427738658164
+gemini_2_5_pro,Gemini 2.5 Pro,Google,llm,0.07213270440067014
+claude_opus_4_5,Claude Opus 4.5,Anthropic,llm,0.07385306743669984
+gemini_3_1_pro,Gemini 3.1 Pro,Google,llm,0.0770827489342005
+deepseek_v3_2,DeepSeek V3.2,DeepSeek,llm,0.08618884248056831
+doctor9,GPT-5-mini,OpenAI,llm,0.09730537932628909
+claude_opus_4_8,Claude Opus 4.8,Anthropic,llm,0.09736487504706748
+claude_opus_4_7,Claude Opus 4.7,Anthropic,llm,0.11026986773048349
+gpt_5_5,GPT-5.5,OpenAI,llm,0.11031659845040531
+qwen3_5_27b,Qwen3.5 27B,Qwen,llm,0.11192443811215518
+doctor8,GPT-4o-mini,OpenAI,llm,0.11306122881001442
+gpt_5_4,GPT-5.4,OpenAI,llm,0.12505872835498738
+llama_3_3_70b,Llama 3.3 70B,Meta,llm,0.13185260919548866
+mistral_medium_3_5,Mistral Medium 3.5,Mistral,llm,0.13248562691979127
+gpt_5,GPT-5,OpenAI,llm,0.14508128821163008

@@ -1,0 +1,15 @@
+Data license
+
+The files in this directory (the synthetic patient cohort, the recommendation
+lists, and the ranked pairwise choices of all 26 raters) are licensed under the
+Creative Commons Attribution 4.0 International License (CC-BY-4.0).
+
+You are free to share and adapt these data for any purpose, provided you give
+appropriate credit. Full terms: https://creativecommons.org/licenses/by/4.0/
+
+If you use these data, please cite:
+  Makov Assif M, et al. LLMs and Physicians Prioritize Preventive-Care Patients
+  by Different Values. [journal], [year].
+
+The analysis code in this repository is licensed separately under the MIT
+License; see ../LICENSE.

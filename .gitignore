@@ -1,0 +1,40 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.ipynb_checkpoints/
+
+# Pipeline-regenerated outputs (run_all.py rebuilds these; kept out of git)
+results/*.csv
+results/*_raw.csv
+results/figures/*.png
+results/figures/*.pdf
+results/paper_figures/*.png
+results/paper_figures/*.pdf
+
+# ...EXCEPT the shipped inputs, which the pipeline cannot regenerate on CPU.
+# These come from the GPU SHAP stage and the long ablation sweep, and are what
+# make a plain `python run_all.py` reproduce the manuscript without a GPU.
+!results/.gitkeep
+!results/figures/.gitkeep
+!results/paper_figures/.gitkeep
+!results/ethical_shap_per_patient.pkl
+!results/ablation_full_auc.csv
+!results/ethical_value_profiles_per_doctor.csv
+!results/analysis1_topN_profiles.csv
+!results/ranknet_scores_per_rater.csv
+!results/multi_seed_consistency.csv
+!results/raw_shap_clustering_distances.csv
+
+# OS / editor cruft
+.DS_Store
+Thumbs.db
+*.swp
+
+# Symlinks created at run time by run_all.py
+code/synthetic_data*.xlsx
+code/rec_lists.xlsx
+code/doctor_rankings.pkl
+code/initial_pairs.pkl
+code/physicians_results
+code/results
