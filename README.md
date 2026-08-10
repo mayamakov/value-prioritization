@@ -135,31 +135,35 @@ between physicians and LLMs and across LLM developer families.
 
 ## Figure and table map
 
-Main figures are written to `results/paper_figures/`; supplementary and
-per-rater figures to `results/figures/`.
+The table below maps each **manuscript** figure to the script that produces it
+and the file it lands in. Note that the code's output filenames use an **earlier
+figure numbering** from a previous draft (for example, the main-text agreement
+matrix is written to a file named `figure_S1_agreement_matrix.png`), so use this
+map rather than the filenames to locate a given manuscript figure. Main-text and
+supplementary figures are written to `results/figures/`.
 
-| Manuscript item | Script | Output file |
-|-----------------|--------|-------------|
-| Figure 1 (study design) | `paper_figures_CORRECTED.py` | `paper_figures/figure_01_study_design.*` |
-| Figure 2 (distance from physicians) | `paper_figures_CORRECTED.py` | `paper_figures/figure_02_distance_from_humans.*` |
-| Figure 3 (PCA value map) | `paper_figures_CORRECTED.py` | `paper_figures/figure_03_pca_map.*` |
-| Figure 4 (battleground pairs) | `paper_figures_CORRECTED.py` | `figures/figure_3_battleground.png` |
-| Figure 5 (per-LLM profiles) | `paper_figures_CORRECTED.py` | `figures/figure_2_per_llm_profiles.png` |
-| Figure S1 (agreement matrix) | `generate_all_figures_FINAL_FIXED.py` | `figures/figure_S1_agreement_matrix.png` |
-| Figure S2 (three methods) | `make_figS2.py` | `figures/figure_S2_three_methods.*` |
-| Figure S3 (consensus distribution) | `generate_all_figures_FINAL_FIXED.py` | `figures/figure_S3_consensus_distribution.png` |
-| Figure S4 (recommendation pseudo-R²) | `figR_rec_pseudoR2.py` | `figures/figR_rec_pseudoR2.*` |
-| Figure S5 (PCA map) | `paper_figures_CORRECTED.py` | `figures/figure_S5_pca_map.png` |
-| Figure S6 (OpenAI trajectory) | `paper_figures_CORRECTED.py` | `figures/figure_S6_openai_trajectory.png` |
-| Figure S7 (seed stability) | `generate_all_figures_FINAL_FIXED.py` | `figures/figure_S7a_seed_stability_spider.png`, `figure_S7b_seed_distances.png` |
-| Figure S9 (mapping sensitivity) | `generate_all_figures_FINAL_FIXED.py` | `figures/figure_S9_mapping_sensitivity.png` |
-| Tables T3-T13 | `print_all_tables_v10.py` | printed to console + `results/*.csv` |
+| Manuscript figure | What it shows | Script | Output file |
+|-------------------|---------------|--------|-------------|
+| **Figure 1** | Study design schematic | hand-drawn (vector editor); code placeholder only | `paper_figures/figure_01_study_design.*` (placeholder) |
+| **Figure 2** | Pairwise agreement matrix (all 26 raters) | `generate_all_figures_FINAL_FIXED.py` | `figures/figure_S1_agreement_matrix.png` |
+| **Figure 3** | Operational value signatures by rater (radar, 6×3) | `generate_all_figures_FINAL_FIXED.py` | `figures/figure_2_per_llm_profiles.png` |
+| **Figure 4** | Discordant-pair clinical divergence | `generate_all_figures_FINAL_FIXED.py` | `figures/figure_3_battleground.png` |
+| **Figure 5** | RankNet ranking score by patient characteristics (risk + per-recommendation) | `figR_priority_by_age_and_rec.py` | `figures/figR_priority_by_age_and_rec.png` |
+| **Figure S1** | Consensus distribution across the 300 common pairs | `generate_all_figures_FINAL_FIXED.py` | `figures/figure_S3_consensus_distribution.png` |
+| **Figure S2** | PCA of the five-dimensional common-pairs value signatures | `generate_all_figures_FINAL_FIXED.py` | `figures/figure_S5_pca_map.png` |
+| **Figure S3** | Full operational value-signature heatmap (26 raters) | `generate_all_figures_FINAL_FIXED.py` | `figures/figure_S4_heatmap_common_pairs.png` |
+| **Figure S4** | Per-recommendation unique contribution to explained choice | `figR_rec_pseudoR2.py` | `figures/figR_rec_pseudoR2.png` |
+| **Figure S5** | Three-method comparison of physician vs. LLM signatures | `make_figS2.py` | `figures/figure_S2_three_methods.png` |
+| **Figure S6** | PCA of the raw SHAP space (before value mapping) | `raw_shap_clustering_FIXED.py` | `figures/figS8_raw_shap_pca.png` |
+| **Figure S7** | Sensitivity to alternative Beauchamp-Childress mappings | `generate_all_figures_FINAL_FIXED.py` | `figures/figure_S9_mapping_sensitivity.png` |
+| **Figure S8** | Web-based pairwise prioritization interface | screenshot (not code-generated) | — |
+| **Tables T3-T13** | Manuscript tables | `print_all_tables_v10.py` | printed to console + `results/*.csv` |
 
 Additional per-rater diagnostic figures (`figR_decomposition`,
 `figR_recommendation_coefficients`, `figR_axis_regression_CI`,
 `figR_winloss_agematched`, …) are produced by the corresponding `figR_*.py`
-scripts and land in `results/figures/`.
-
+scripts and land in `results/figures/`. They are exploratory and are not
+included in the manuscript.
 ---
 
 ## What is *not* reproduced here (and why)
