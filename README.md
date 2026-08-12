@@ -119,6 +119,35 @@ between steps, and a single failure does not abort the run):
 
 ---
 
+## Statistical sensitivity and uncertainty analyses
+
+`code/stat_review_sensitivity.py` reproduces the pre-submission statistical
+sensitivity analyses reported in **Supplementary Methods 4.3** and
+**Supplementary Table S14**:
+
+* **[A]** ridge-penalty (λ = 0.01–20) and predictor-scaling grid for the pooled
+  pairwise choice model;
+* **[B]** two-way (rater x pair) cluster bootstrap for the per-axis choice
+  regression (B = 1,000);
+* **[C]** developer-family-balanced Mann-Whitney comparisons (7 family means +
+  all 90 one-model-per-family panels);
+* **[D]** joint pair bootstrap (B = 1,000) propagated through signatures →
+  z-scoring → physician centroid → Euclidean distances (source of
+  Supplementary Table S14);
+* **[E]** leave-one-axis-out distances; **[F]** per-axis pair support and a
+  support-weighted distance.
+
+```bash
+cd code
+python stat_review_sensitivity.py          # full run, B = 1,000 (~4 min, CPU)
+python stat_review_sensitivity.py --fast   # B = 200 smoke test
+```
+
+Outputs are written to `results/stat_review/*.csv` (shipped precomputed with
+B = 1,000 and a fixed RNG seed, so the run reproduces them exactly).
+
+---
+
 ## The study in brief
 
 Ten physicians and sixteen LLMs each ranked the same set of preventive-care
