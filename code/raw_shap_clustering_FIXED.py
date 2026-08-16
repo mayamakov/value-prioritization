@@ -298,7 +298,7 @@ for i, rater in enumerate(raters):
 ax.set_xlabel(f'PC1 ({pca.explained_variance_ratio_[0]:.1%} of variance)', fontsize=12)
 ax.set_ylabel(f'PC2 ({pca.explained_variance_ratio_[1]:.1%} of variance)', fontsize=12)
 ax.set_title('Raw-SHAP clustering (no Beauchamp-Childress mapping applied)\n'
-             'PCA on 29-dimensional mean-SHAP-per-feature signature',
+             'PCA on 24-dimensional mean-SHAP-per-feature signature',
              fontsize=13, weight='bold', pad=15)
 ax.grid(alpha=0.3)
 ax.legend(loc='best', fontsize=10, framealpha=0.95)

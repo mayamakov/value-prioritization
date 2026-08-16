@@ -1,0 +1,27 @@
+entity,label,family,type,distance
+fm_3,Family Medicine 3,Humans,human,0.7552611722639198
+ph_4,Public Health 4,Humans,human,1.301967581264139
+ph_2,Public Health 2,Humans,human,1.3277459556330118
+ph_3,Public Health 3,Humans,human,1.439672782188414
+fm_1,Family Medicine 1,Humans,human,1.584959092032521
+fm_2,Family Medicine 2,Humans,human,1.6248618312627114
+ph_5,Public Health 5,Humans,human,1.843011971957877
+fm_5,Family Medicine 5,Humans,human,2.1669570660259283
+ph_1,Public Health 1,Humans,human,2.523296667185951
+fm_4,Family Medicine 4,Humans,human,2.5997418744986422
+gemini_3_1_pro,Gemini 3.1 Pro,Google,llm,2.3623257091561265
+gemini_3_5_flash,Gemini 3.5 Flash,Google,llm,2.498463724880484
+deepseek_v3_2,DeepSeek V3.2,DeepSeek,llm,2.8683229074762218
+doctor10,Llama-4 Maverick,Meta,llm,2.9166845198687725
+gpt_5_5,GPT-5.5,OpenAI,llm,2.93770421182772
+qwen3_5_27b,Qwen3.5 27B,Qwen,llm,3.1562345185480374
+gemini_2_5_pro,Gemini 2.5 Pro,Google,llm,3.2878295798031596
+gpt_5_4,GPT-5.4,OpenAI,llm,3.5229858399024656
+gpt_5,GPT-5,OpenAI,llm,3.55031981169605
+mistral_medium_3_5,Mistral Medium 3.5,Mistral,llm,3.5995859663525938
+llama_3_3_70b,Llama 3.3 70B,Meta,llm,3.6033823500291815
+claude_opus_4_7,Claude Opus 4.7,Anthropic,llm,3.6091007520589313
+doctor9,GPT-5-mini,OpenAI,llm,3.668495098770699
+claude_opus_4_8,Claude Opus 4.8,Anthropic,llm,3.7269463578408715
+claude_opus_4_5,Claude Opus 4.5,Anthropic,llm,3.7554667617781106
+doctor8,GPT-4o-mini,OpenAI,llm,3.8524074080972848

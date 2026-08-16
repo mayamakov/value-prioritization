@@ -1,6 +1,6 @@
 dropped_axis,n_outside,closest,inside
 Beneficence-utility,13,Gemini 3.1 Pro,"GPT-5, Gemini 3.1 Pro, Gemini 3.5 Flash"
-Beneficence-need,11,Gemini 3.1 Pro,"GPT-5.5, Gemini 3.1 Pro, Gemini 3.5 Flash, Llama-4 Maverick, DeepSeek V3.2"
+Beneficence-need,10,Gemini 3.1 Pro,"GPT-5.5, Gemini 3.1 Pro, Gemini 3.5 Flash, Llama-4 Maverick, DeepSeek V3.2, Qwen3.5 27B"
 Non-maleficence,13,Gemini 2.5 Pro,"Gemini 2.5 Pro, Gemini 3.1 Pro, Gemini 3.5 Flash"
 Patient empowerment,16,Gemini 3.1 Pro,—
-Resource justice,9,Gemini 3.5 Flash,"GPT-5.5, Claude Opus 4.5, Gemini 3.1 Pro, Gemini 3.5 Flash, Llama-4 Maverick, DeepSeek V3.2, Qwen3.5 27B"
+Resource justice,10,Gemini 3.5 Flash,"GPT-5.5, Claude Opus 4.5, Gemini 3.1 Pro, Gemini 3.5 Flash, Llama-4 Maverick, DeepSeek V3.2"

@@ -203,14 +203,14 @@ def figure_S2():
 
     # (i) SHAP-based
     cols = [f'SHAP_{d}' for d in DIMS]
-    panel(axes[0], 'SHAP-based',
+    panel(axes[0], 'A. SHAP-based',
           _comb.loc[HUMANS, cols].mean().values, _comb.loc[LLM_ORDER, cols].mean().values)
     # (ii) Top 10% patients (top_N=50 of 500 test patients)
-    panel(axes[1], 'Top 10% patients',
+    panel(axes[1], 'B. Top 10% patients',
           t50[t50_grp == 'human'][DIMS].mean().values, t50[t50_grp == 'llm'][DIMS].mean().values)
     # (iii) Common pairs
     cols = [f'Pairs_{d}' for d in DIMS]
-    panel(axes[2], 'Common pairs',
+    panel(axes[2], 'C. Common pairs',
           _comb.loc[HUMANS, cols].mean().values, _comb.loc[LLM_ORDER, cols].mean().values)
 
     axes[0].set_ylabel('Mean operational weight')
@@ -271,7 +271,7 @@ def figure_S4():
         for j in range(len(DIMS)):
             ax.text(j, i, f'{M[i, j]:+.2f}', ha='center', va='center', size=6, color='black')
     plt.colorbar(im, label='Common-pairs operational weight')
-    ax.set_title('Operational value-signature heatmap (all 26 raters)', weight='bold')
+    pass  # ax.set_title('Operational value-signature heatmap (all 26 raters)', weight='bold')
     plt.tight_layout(); save(fig, 'figure_S4_heatmap_common_pairs')
 
 # ==========================================================================

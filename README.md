@@ -250,3 +250,15 @@ pipeline.
 - `data/model_versions.csv` — the exact API model string used for each of the 16
   LLM raters (developer and version identifier), matching the manuscript's data
   availability statement.
+
+---
+## Data integrity note (August 2026)
+
+Following a run-log audit, failed LLM API calls that had been silently
+fallback-assigned at the batch level (Gemini 2.5 Pro, Qwen3.5 27B) or dropped
+(Gemini 3.1 Pro rollouts) were re-queried and completed with genuine model
+decisions. All primary and rollout analyses now use complete data: every rater
+has a valid parsed decision for every one of the 300 common pairs, and every
+rollout has 900/900 decisions. See `code/repair/README.md` for details and the
+exact affected pairs. All results and figures in `results/` were regenerated
+from the completed data.
