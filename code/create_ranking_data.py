@@ -47,15 +47,15 @@ def rank_all_doctors_for_pairs(pairs, patient_df,PAIRS_ONLY):
     doctor_decision_funcs = {}
 
     if PAIRS_ONLY:
-        import patient_ranking_llm as _llm
-        _llm.activate_as_doctor_heuristics()
-        print("[Info] Activated Gemma-based heuristics.")
-        # טעינה מהמודול שהוחלף
-        import doctor_heuristics
-        doctor_decision_funcs = {
-            f'doctor{i}': getattr(doctor_heuristics, f'doctor_decision_tree_{i}')
-            for i in range(1, 11)
-        }
+        # Legacy experimental path from early development (Gemma-simulated doctor
+        # heuristics via the 'patient_ranking_llm' module). This module is not part
+        # of the published pipeline and is not distributed with this repository:
+        # none of the paper's analyses use this branch (physician preferences were
+        # collected from real physicians via the web interface, and LLM rankings
+        # via rank_with_llm.py). Kept as an explicit guard for provenance.
+        raise NotImplementedError(
+            "PAIRS_ONLY=True requires the legacy 'patient_ranking_llm' module, "
+            "which is not part of the published pipeline. Use PAIRS_ONLY=False.")
     else:
         print("[Info] Using original Decision Tree heuristics.")
         from doctor_heuristics import (
