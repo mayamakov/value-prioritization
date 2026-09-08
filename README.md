@@ -262,3 +262,17 @@ has a valid parsed decision for every one of the 300 common pairs, and every
 rollout has 900/900 decisions. See `code/repair/README.md` for details and the
 exact affected pairs. All results and figures in `results/` were regenerated
 from the completed data.
+
+## Reproducibility notes
+
+- `python run_all.py` reproduces every figure and table in the paper deterministically
+  from the shipped inputs, including the shipped SHAP artifact.
+- `--with-shap` optionally regenerates the SHAP stage. The shipped SHAP files are the
+  canonical artifacts analysed in the paper (the original run predated per-rater
+  seeding); regeneration yields equivalent but not byte-identical values, and no
+  pairwise-based result depends on this stage.
+- Scope: the synthetic cohort is shipped as `data/synthetic_data.xlsx` (its generator is
+  not part of this repository); the common-pair lists are shipped per rater; LLM
+  querying code (`code/rank_with_llm.py`) is included but is not executed by
+  `run_all.py`, since it requires provider API keys and paid calls.
+

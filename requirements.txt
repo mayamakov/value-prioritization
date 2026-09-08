@@ -19,3 +19,6 @@ xgboost>=2.0
 lightgbm>=4.0
 openpyxl>=3.1        # reads the synthetic-cohort .xlsx
 graphviz>=0.20       # only for the study-design schematic (Figure 1)
+openai
+anthropic
+google-generativeai

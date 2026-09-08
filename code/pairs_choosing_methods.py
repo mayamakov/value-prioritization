@@ -7,7 +7,6 @@ import pandas as pd
 import torch
 import torch.nn as nn
 import torch.optim as optim
-import lightgbm as lgb
 from torch.utils.data import Dataset, DataLoader
 from sklearn.model_selection import train_test_split
 from sklearn.utils import resample
@@ -20,7 +19,6 @@ import matplotlib.pyplot as plt
 import matplotlib.colors as mcolors
 from matplotlib import cm
 import seaborn as sns
-import graphviz
 from openpyxl import load_workbook
 from openpyxl.styles import PatternFill
 from openpyxl.formatting.rule import ColorScaleRule
