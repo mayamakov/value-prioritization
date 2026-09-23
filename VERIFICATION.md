@@ -28,7 +28,7 @@ Every value below was re-derived from the shipped pipeline on a clean checkout.
 | Axis regression, LLM priority-to-need | +3.13 [2.02, 4.24] | OK |
 | Run-to-run agreement | median 0.95, range 0.84-0.99 (lowest: Gemini 2.5 Pro 0.838) | OK |
 
-## Per-rater distance from the physician centroid (primary, Table S2)
+## Per-rater distance from the physician centroid (primary, Supplementary Table S7)
 | Model | Distance |
 |---|---|
 | Gemini 3.1 Pro | 2.362 |
@@ -56,3 +56,19 @@ it). The original SHAP generation predated per-rater seeding and was
 processing-order dependent; per-rater seeding was added subsequently for future
 runs. Regenerating with `--with-shap` therefore yields equivalent but not
 byte-identical SHAP values; no pairwise-based result depends on this stage.
+
+## Rater-label permutation tests (Supplementary Table S3)
+Script: `code/perm_test_agreement.py` (10^6 label permutations, seed 2026; resolution floor 1e-6).
+| Contrast | Observed difference | p |
+|---|---|---|
+| Within-physician vs. physician-LLM (69.7% vs. 54.8%) | +14.9 pp | 0.003 |
+| Within-LLM vs. physician-LLM (84.8% vs. 54.8%) | +30.0 pp | <1e-5 |
+| Pooled within- vs. between-group (80.7% vs. 54.8%) | +25.9 pp | <1e-5 |
+| Physicians agreeing more with own group | 9 of 10 | 0.021 (two-sided binomial) |
+| LLMs agreeing more with own group | 16 of 16 | 3.1e-5 (two-sided binomial) |
+
+## Legacy results files
+`results/ethical_value_profiles_per_doctor.csv` is an earlier-draft artifact with a
+mixed rater panel; it does not reproduce the manuscript values and was moved to
+`results/archive/`. The canonical per-rater signatures and centroid distances are
+`results/value_signatures_distances_TableS7.csv` (identical to Supplementary Table S7).
