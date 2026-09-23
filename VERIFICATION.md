@@ -67,8 +67,19 @@ Script: `code/perm_test_agreement.py` (10^6 label permutations, seed 2026; resol
 | Physicians agreeing more with own group | 9 of 10 | 0.021 (two-sided binomial) |
 | LLMs agreeing more with own group | 16 of 16 | 3.1e-5 (two-sided binomial) |
 
-## Legacy results files
-`results/ethical_value_profiles_per_doctor.csv` is an earlier-draft artifact with a
-mixed rater panel; it does not reproduce the manuscript values and was moved to
-`results/archive/`. The canonical per-rater signatures and centroid distances are
-`results/value_signatures_distances_TableS7.csv` (identical to Supplementary Table S7).
+## Shipped Stage-1 intermediate
+`results/ethical_value_profiles_per_doctor.csv` holds the SHAP-derived per-rater
+signature profiles produced by Stage 1 (`stage1_ethical_value_mapping.py`). It is
+shipped with the repository because the SHAP stage is skipped by default, and it is a
+required input for `stage2_top_and_pairs.py`, `normalize_tables.py`, and
+`make_figS2.py`. It contains SHAP-based signatures and is NOT the source of the
+common-pairs signature values in Supplementary Table S7 (those are shipped separately
+as `results/value_signatures_distances_TableS7.csv`).
+
+## Full-pipeline check (2026-09-23)
+`run_all.py` executed end-to-end on a clean checkout of this commit: stages A, C, D,
+all figR figures, and stage E completed; `perm_test_agreement.py` reproduced
+Supplementary Table S3 exactly (within-physician 0.6971, within-LLM 0.8477, between
+0.5478; +14.9 pp p=0.0034; +30.0 pp and +25.9 pp with 0/10^6 exceedances; 9/10 and
+16/16 sign tests). Run-to-run median 0.947 (range 0.838-0.987); raw-vs-mapped
+Pearson r=0.849, Spearman rho=0.884.
