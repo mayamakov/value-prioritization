@@ -297,7 +297,7 @@ for i, rater in enumerate(raters):
 
 ax.set_xlabel(f'PC1 ({pca.explained_variance_ratio_[0]:.1%} of variance)', fontsize=12)
 ax.set_ylabel(f'PC2 ({pca.explained_variance_ratio_[1]:.1%} of variance)', fontsize=12)
-ax.set_title('Raw-SHAP clustering (no Beauchamp-Childress mapping applied)\n'
+ax.set_title('Raw-SHAP clustering (no operational value mapping applied)\n'
              'PCA on 24-dimensional mean-SHAP-per-feature signature',
              fontsize=13, weight='bold', pad=15)
 ax.grid(alpha=0.3)
@@ -307,7 +307,7 @@ ax.axvline(0, color='black', linewidth=0.5, alpha=0.3)
 
 plt.tight_layout()
 fig.savefig(os.path.join(FIG_DIR, 'figS8_raw_shap_pca.png'),
-            dpi=200, bbox_inches='tight')
+            dpi=300, bbox_inches='tight')
 fig.savefig(os.path.join(FIG_DIR, 'figS8_raw_shap_pca.pdf'),
             bbox_inches='tight')
 plt.close(fig)
