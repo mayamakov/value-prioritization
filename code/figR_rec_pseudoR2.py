@@ -143,7 +143,7 @@ ax.text(0.0,1.005,'Resource justice is price-based and distributed across all re
         transform=ax.transAxes,fontsize=7.2,color='#999',va='bottom')
 plt.tight_layout()
 import os; os.makedirs('results/figures',exist_ok=True)
-for ext in ['png','pdf']: fig.savefig(f'results/figures/figR_rec_pseudoR2.{ext}',dpi=200,bbox_inches='tight')
+for ext in ['png','pdf']: fig.savefig(f'results/figures/figR_rec_pseudoR2.{ext}',dpi=300,bbox_inches='tight')
 print('predictor                     phys_dR2   llm_dR2')
 print(f'{"Patient risk (priority)":28s}  {demoH:+.4f}   {demoL:+.4f}')
 for ax_key in AXIS_ORDER:

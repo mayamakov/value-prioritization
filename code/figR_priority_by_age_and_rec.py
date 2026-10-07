@@ -125,7 +125,7 @@ axA.legend(handles=leg,loc='upper left',fontsize=8.5,frameon=False)
 # main title removed from image (lives in the Word caption instead, per Noa's comment)
 plt.tight_layout()
 import os; os.makedirs('results/figures',exist_ok=True)
-for ext in ['png','pdf']: fig.savefig(f'results/figures/figR_priority_by_age_and_rec.{ext}',dpi=200,bbox_inches='tight')
+for ext in ['png','pdf']: fig.savefig(f'results/figures/figR_priority_by_age_and_rec.{ext}',dpi=300,bbox_inches='tight')
 # numeric sanity
 print('risk slope (40+ minus <10), mean z:')
 for grp,nm in [(FAMILY,'family'),(PUBLIC,'public'),(MODELS,'models')]:

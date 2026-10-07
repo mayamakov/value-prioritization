@@ -85,7 +85,7 @@ def hlabel(rater_key):
 
 def save(fig, name):
     for ext in ('png', 'pdf'):
-        fig.savefig(os.path.join(FIG_DIR, f'{name}.{ext}'), dpi=200, bbox_inches='tight')
+        fig.savefig(os.path.join(FIG_DIR, f'{name}.{ext}'), dpi=300, bbox_inches='tight')
     plt.close(fig)
     print(f'  saved {name}.png/.pdf')
 
@@ -390,7 +390,7 @@ def figure_S9():
         ax.plot(range(4), ys, marker='o', lw=2, color=FAM_COL[FAM[k]], label=DISP[k])
     ax.set_xticks(range(4)); ax.set_xticklabels(mlab, size=9)
     ax.set_ylabel('Distance from physician centroid')
-    ax.set_title('Sensitivity to alternative Beauchamp-Childress mappings\n'
+    ax.set_title('Sensitivity to alternative operational value mappings\n'
                  '(Gemini-family models remain closest under every mapping)', weight='bold')
     ax.legend(fontsize=8, ncol=2); ax.grid(alpha=0.3); plt.tight_layout()
     save(fig, 'figure_S9_mapping_sensitivity')
