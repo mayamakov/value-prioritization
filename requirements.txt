@@ -1,5 +1,5 @@
 # Python dependencies for reproducing the analyses in
-# "LLMs and Physicians Prioritize Preventive-Care Patients by Different Values"
+# "Clinical Prioritization Reveals Value Misalignment Between Large Language Models and Physicians"
 #
 # Tested with Python 3.11 and 3.12.
 # Install with:  pip install -r requirements.txt

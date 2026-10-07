@@ -4,7 +4,7 @@
 run_all.py  —  ONE-BUTTON reproduction of all analyses in the manuscript
 ================================================================================
 
-"LLMs and Physicians Prioritize Preventive-Care Patients by Different Values"
+"Clinical Prioritization Reveals Value Misalignment Between Large Language Models and Physicians"
 
 WHAT THIS DOES
 --------------

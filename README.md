@@ -1,6 +1,6 @@
 # Reproducibility package
 
-**LLMs and Physicians Prioritize Preventive-Care Patients by Different Values**
+**Clinical Prioritization Reveals Value Misalignment Between Large Language Models and Physicians**
 
 This repository contains the code and data needed to reproduce every analysis,
 figure, and table in the manuscript. The pipeline runs end-to-end on a laptop
@@ -175,21 +175,21 @@ and the file it lands in. Note that the code's output filenames use an **earlier
 figure numbering** from a previous draft (for example, the main-text agreement
 matrix is written to a file named `figure_S1_agreement_matrix.png`), so use this
 map rather than the filenames to locate a given manuscript figure. Main-text and
-supplementary figures are written to `results/figures/`.
+supplementary figures are written to `results/figures/` as PNG (300 dpi) and PDF.
 
 | Manuscript figure | What it shows | Script | Output file |
 |-------------------|---------------|--------|-------------|
 | **Figure 1** | Study design schematic | hand-drawn (vector editor); code placeholder only | `paper_figures/figure_01_study_design.*` (placeholder) |
 | **Figure 2** | Pairwise agreement matrix (all 26 raters) | `generate_all_figures_FINAL_FIXED.py` | `figures/figure_S1_agreement_matrix.png` |
-| **Figure 3** | Operational value signatures by rater (radar, 6x3) | `generate_all_figures_FINAL_FIXED.py` | `figures/figure_2_per_llm_profiles.png` |
-| **Figure 4** | Discordant-pair clinical divergence | `generate_all_figures_FINAL_FIXED.py` | `figures/figure_3_battleground.png` |
+| **Figure 3** | Discordant-pair clinical divergence | `generate_all_figures_FINAL_FIXED.py` | `figures/figure_3_battleground.png` |
+| **Figure 4** | Operational value signatures by rater (radar, 6x3) | `generate_all_figures_FINAL_FIXED.py` | `figures/figure_2_per_llm_profiles.png` |
 | **Figure 5** | RankNet ranking score by patient characteristics (risk + per-recommendation) | `figR_priority_by_age_and_rec.py` | `figures/figR_priority_by_age_and_rec.png` |
 | **Figure S1** | Web-based pairwise prioritization interface | screenshot (not code-generated) | - |
 | **Figure S2** | Consensus distribution across the 300 common pairs | `generate_all_figures_FINAL_FIXED.py` | `figures/figure_S3_consensus_distribution.png` |
 | **Figure S3** | PCA of the raw 24-dimensional SHAP space (before value mapping) | `raw_shap_clustering_FIXED.py` | `figures/figS8_raw_shap_pca.png` |
 | **Figure S4** | Full operational value-signature heatmap (26 raters) | `generate_all_figures_FINAL_FIXED.py` | `figures/figure_S4_heatmap_common_pairs.png` |
 | **Figure S5** | Per-recommendation unique contribution to explained choice | `figR_rec_pseudoR2.py` | `figures/figR_rec_pseudoR2.png` |
-| **Figure S6** | Sensitivity to alternative Beauchamp-Childress mappings | `generate_all_figures_FINAL_FIXED.py` | `figures/figure_S9_mapping_sensitivity.png` |
+| **Figure S6** | Sensitivity to alternative operational value mappings | `generate_all_figures_FINAL_FIXED.py` | `figures/figure_S9_mapping_sensitivity.png` |
 
 Scripts for figures from earlier drafts that are no longer in the manuscript
 (`make_figS2.py` three-method comparison; the five-dimensional signature PCA in
